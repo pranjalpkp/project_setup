@@ -24,14 +24,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#07080c]/95 backdrop-blur-xl border-b border-amber-500/20 py-3 shadow-2xl shadow-black/80'
-          : 'bg-transparent py-4 sm:py-5'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200 py-3 shadow-md text-slate-800'
+          : 'bg-[#07080c]/80 backdrop-blur-md border-b border-slate-800/60 py-4 sm:py-5 text-white'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Official Brand Logo - Crisp White Glass Container for 100% Visibility of Black Logo Text */}
+          {/* Official Brand Logo Container */}
           <a href="#" aria-label="Ink Urban LLP Home" className="flex items-center group">
             <div className="logo-badge">
               <img 
@@ -47,27 +47,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
             </div>
           </a>
 
-          {/* Desktop Navigation Links with Yellowish Gold Hover Colors */}
-          <nav aria-label="Main Navigation" className="hidden md:flex items-center space-x-6 text-xs tracking-wider uppercase font-semibold text-slate-200">
-            <a href="#audit-teardown" className="hover:text-amber-300 transition-colors">
+          {/* Desktop Navigation Links */}
+          <nav aria-label="Main Navigation" className={`hidden md:flex items-center space-x-6 text-xs tracking-wider uppercase font-bold ${
+            isScrolled ? 'text-slate-800' : 'text-slate-200'
+          }`}>
+            <a href="#audit-teardown" className="hover:text-amber-400 transition-colors">
               Audit
             </a>
-            <a href="#problems" className="hover:text-amber-300 transition-colors">
+            <a href="#problems" className="hover:text-amber-400 transition-colors">
               Solutions
             </a>
-            <a href="#services" className="hover:text-amber-300 transition-colors">
+            <a href="#services" className="hover:text-amber-400 transition-colors">
               Services
             </a>
-            <a href="#industries" className="hover:text-amber-300 transition-colors">
+            <a href="#industries" className="hover:text-amber-400 transition-colors">
               Industries
             </a>
-            <a href="#process" className="hover:text-amber-300 transition-colors">
+            <a href="#process" className="hover:text-amber-400 transition-colors">
               Process
             </a>
-            <a href="#case-studies" className="hover:text-amber-300 transition-colors">
+            <a href="#case-studies" className="hover:text-amber-400 transition-colors">
               Case Studies
             </a>
-            <a href="#faq" className="hover:text-amber-300 transition-colors">
+            <a href="#faq" className="hover:text-amber-400 transition-colors">
               FAQ
             </a>
           </nav>
@@ -77,7 +79,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
             <button
               type="button"
               onClick={onOpenAuditModal}
-              className="text-xs font-semibold px-4 py-2.5 rounded-xl text-slate-100 border border-slate-700/80 hover:border-amber-400/60 hover:bg-amber-400/10 hover:text-amber-300 transition-all duration-300"
+              className={`text-xs font-semibold px-4 py-2.5 rounded-xl border transition-all duration-300 ${
+                isScrolled
+                  ? 'text-slate-800 border-slate-300 hover:border-rose-500 hover:bg-rose-500/10 hover:text-rose-600'
+                  : 'text-slate-200 border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 hover:text-amber-300'
+              }`}
             >
               Website Audit
             </button>
@@ -101,69 +107,105 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
             >
               Book Call
             </button>
+
             <button
               type="button"
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-200 hover:text-amber-300 rounded-lg bg-[#121624] border border-slate-800"
+              className={`p-2 rounded-lg border ${
+                isScrolled
+                  ? 'text-slate-800 bg-slate-100 border-slate-300'
+                  : 'text-slate-200 bg-[#121624] border-slate-800'
+              }`}
             >
-              {mobileMenuOpen ? <XMarkIcon className="w-6 h-6" aria-hidden="true" /> : <Bars3Icon className="w-6 h-6" aria-hidden="true" />}
+              {mobileMenuOpen ? (
+                <XMarkIcon className="w-6 h-6" aria-hidden="true" />
+              ) : (
+                <Bars3Icon className="w-6 h-6" aria-hidden="true" />
+              )}
             </button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a0c14] border-b border-amber-500/20 px-6 py-6 space-y-4 shadow-2xl">
-          <nav aria-label="Mobile Drawer Navigation" className="flex flex-col space-y-3 text-sm font-medium text-slate-100">
-            <a href="#audit-teardown" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Website Audit & Teardown
+        <div className="md:hidden bg-[#090C16]/98 border-b border-slate-800 px-4 pt-3 pb-6 space-y-4 shadow-2xl animate-fadeIn text-white">
+          <nav aria-label="Mobile Navigation" className="flex flex-col space-y-3 text-xs tracking-wider uppercase font-bold text-slate-200">
+            <a 
+              href="#audit-teardown" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              Audit
             </a>
-            <a href="#problems" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Solutions & Bottlenecks
+            <a 
+              href="#problems" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              Solutions
             </a>
-            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Services & Capabilities
+            <a 
+              href="#services" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              Services
             </a>
-            <a href="#industries" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Specialized Industries
+            <a 
+              href="#industries" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              Industries
             </a>
-            <a href="#process" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Execution Methodology
+            <a 
+              href="#process" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              Process
             </a>
-            <a href="#case-studies" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Client Impact Studies
+            <a 
+              href="#case-studies" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              Case Studies
             </a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              About Ink Urban
-            </a>
-            <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-300">
-              Frequently Asked Questions
+            <a 
+              href="#faq" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-amber-300 py-1 transition-colors"
+            >
+              FAQ
             </a>
           </nav>
 
-          <div className="pt-4 border-t border-slate-800 flex flex-col space-y-2.5">
+          <div className="pt-2 flex flex-col space-y-2.5">
             <button
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenAuditModal();
               }}
-              className="w-full py-3 rounded-xl border border-amber-400/40 text-amber-300 hover:bg-amber-400/10 font-semibold text-center text-sm"
+              className="w-full text-center py-2.5 rounded-xl border border-slate-700 text-slate-200 font-semibold text-xs uppercase tracking-wider"
             >
-              Request Technical Website Audit
+              Request Free Video Audit
             </button>
+
             <button
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBookingModal();
               }}
-              className="w-full py-3 rounded-xl brand-gradient-bg text-white font-bold text-center text-sm shadow-lg shadow-rose-500/25"
+              className="w-full text-center py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25"
             >
-              Schedule Consultation
+              Schedule Strategy Call
             </button>
           </div>
         </div>

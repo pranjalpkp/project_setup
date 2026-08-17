@@ -36,10 +36,10 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
   };
 
   return (
-    <section id="audit-offer" className="py-12 sm:py-16 bg-gradient-to-b from-[#07080C] via-[#0F1322] to-[#07080C] relative">
+    <section id="audit-offer" className="py-12 sm:py-16 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="relative rounded-3xl glass-panel-brand p-8 sm:p-12 border border-rose-500/40 shadow-2xl overflow-hidden brand-glow">
+        <div className="relative rounded-3xl glass-panel-brand p-8 sm:p-12 border border-slate-200 shadow-xl overflow-hidden brand-glow">
           
           {/* Background Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -49,41 +49,41 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
             {/* Left Offer Description */}
             <div className="lg:col-span-6 space-y-6 text-left">
               
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-bold uppercase tracking-wider">
-                <VideoCameraIcon className="w-4 h-4 text-rose-400" aria-hidden="true" />
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-rose-500/20 border border-rose-500/30 text-rose-600 text-xs font-bold uppercase tracking-wider">
+                <VideoCameraIcon className="w-4 h-4 text-rose-500 flex-shrink-0" aria-hidden="true" />
                 <span>Complimentary Performance Audit</span>
               </div>
 
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
                 Request a <span className="brand-gradient-text">Technical Website Audit</span> & Analysis
               </h2>
 
-              <p className="text-slate-200 text-base leading-relaxed">
+              <p className="text-slate-700 text-base leading-relaxed">
                 Receive a 15-minute video analysis outlining performance bottlenecks, user experience friction points, and search engine positioning opportunities.
               </p>
 
               <div className="space-y-3 pt-2">
-                <div className="flex items-center space-x-3 text-sm text-slate-100">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-400 flex-shrink-0" aria-hidden="true" />
+                <div className="flex items-center space-x-3 text-sm text-slate-800">
+                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0" aria-hidden="true" />
                   <span><strong>Conversion UX Audit:</strong> Visual structure and inquiry pathway analysis.</span>
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-slate-100">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-400 flex-shrink-0" aria-hidden="true" />
+                <div className="flex items-center space-x-3 text-sm text-slate-800">
+                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0" aria-hidden="true" />
                   <span><strong>Core Web Vitals Diagnosis:</strong> Mobile load speeds and asset optimization scores.</span>
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-slate-100">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-400 flex-shrink-0" aria-hidden="true" />
+                <div className="flex items-center space-x-3 text-sm text-slate-800">
+                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0" aria-hidden="true" />
                   <span><strong>Search Positioning Review:</strong> Local Google Map Pack and structured schema coverage.</span>
                 </div>
               </div>
 
-              <div className="pt-4 flex items-center space-x-6 text-xs text-slate-300 border-t border-rose-500/20">
+              <div className="pt-4 flex items-center space-x-6 text-xs text-slate-600 border-t border-slate-200">
                 <div className="flex items-center space-x-2">
-                  <ClockIcon className="w-4 h-4 text-rose-400" aria-hidden="true" />
+                  <ClockIcon className="w-4 h-4 text-rose-500 flex-shrink-0" aria-hidden="true" />
                   <span>Delivered within 24 Hours</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <ShieldCheckIcon className="w-4 h-4 text-rose-400" aria-hidden="true" />
+                  <ShieldCheckIcon className="w-4 h-4 text-rose-500 flex-shrink-0" aria-hidden="true" />
                   <span>100% Private & Confidential</span>
                 </div>
               </div>
@@ -92,20 +92,20 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
 
             {/* Right Form Card */}
             <div className="lg:col-span-6">
-              <div className="p-6 sm:p-8 rounded-2xl bg-[#090C16] border border-rose-500/30 space-y-5 shadow-2xl">
+              <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 space-y-5 shadow-xl">
                 
                 <div className="text-left space-y-1">
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-slate-900">
                     Request Your Video Teardown
                   </h3>
-                  <p className="text-xs text-slate-300">
+                  <p className="text-xs text-slate-600">
                     No sales pressure. Just actionable growth advice from senior web & SEO strategists.
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4 text-left">
                   <div>
-                    <label htmlFor="offer-website" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                    <label htmlFor="offer-website" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                       Your Business Website URL *
                     </label>
                     <input
@@ -115,12 +115,12 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
                       value={websiteUrl}
                       onChange={(e) => setWebsiteUrl(e.target.value)}
                       placeholder="https://yourclinic-or-firm.com"
-                      className="w-full px-4 py-3 rounded-xl bg-[#121626] border border-slate-700 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-rose-500"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-rose-500"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="offer-email" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                    <label htmlFor="offer-email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                       Work Email Address *
                     </label>
                     <input
@@ -130,19 +130,19 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="doctor@clinic.com or partner@lawfirm.com"
-                      className="w-full px-4 py-3 rounded-xl bg-[#121626] border border-slate-700 text-white placeholder-slate-400 text-sm focus:outline-none focus:border-rose-500"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-rose-500"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="offer-industry" className="block text-xs font-semibold text-slate-200 uppercase tracking-wider mb-1.5">
+                    <label htmlFor="offer-industry" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                       Business Industry
                     </label>
                     <select
                       id="offer-industry"
                       value={businessType}
                       onChange={(e) => setBusinessType(e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-[#121626] border border-slate-700 text-white text-sm focus:outline-none focus:border-rose-500"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-rose-500"
                     >
                       <option value="medspa">Med Spa / Aesthetic Clinic</option>
                       <option value="dentist">Cosmetic Dentist</option>
@@ -166,7 +166,7 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
                   <button
                     type="button"
                     onClick={onOpenAuditModal}
-                    className="text-xs text-rose-300 hover:text-white underline font-medium"
+                    className="text-xs text-rose-600 hover:underline font-medium"
                   >
                     Or open full audit request drawer
                   </button>

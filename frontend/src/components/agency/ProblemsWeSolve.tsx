@@ -42,7 +42,7 @@ export const ProblemsWeSolve: React.FC = () => {
   ];
 
   return (
-    <section id="problems" className="py-12 sm:py-16 bg-[#07080C] relative">
+    <section id="problems" className="py-12 sm:py-16 bg-[#07080C] relative border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -62,11 +62,11 @@ export const ProblemsWeSolve: React.FC = () => {
             return (
               <div 
                 key={idx}
-                className="p-8 rounded-2xl glass-panel border border-slate-800/80 hover:border-amber-400/60 transition-all duration-300 group space-y-6"
+                className="p-8 rounded-2xl glass-panel-dark border border-slate-800 hover:border-amber-400/60 transition-all duration-300 group space-y-6 shadow-xl"
               >
                 <div className="flex items-start justify-between">
                   <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-6 h-6 flex-shrink-0" />
                   </div>
                   <span className="text-xs font-mono font-semibold text-slate-500">
                     PROBLEM 0{idx + 1}
@@ -85,7 +85,7 @@ export const ProblemsWeSolve: React.FC = () => {
                 {/* Solution Box */}
                 <div className="p-4 rounded-xl bg-[#0B0F1B] border border-amber-500/20 space-y-2">
                   <div className="flex items-center space-x-2 text-xs font-bold text-amber-300 uppercase tracking-wider">
-                    <CheckIcon className="w-4 h-4 text-emerald-400" />
+                    <CheckIcon className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                     <span>Ink Urban Engineered Solution: {item.solution}</span>
                   </div>
                   <p className="text-xs text-slate-300 leading-relaxed">
