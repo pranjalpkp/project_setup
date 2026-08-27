@@ -46,75 +46,65 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
             <span className="text-slate-600 hidden md:inline" aria-hidden="true">•</span>
             <span className="hidden md:flex items-center space-x-1 text-slate-200 font-semibold">
               <GlobeAltIcon className="w-3.5 h-3.5 text-rose-400 flex-shrink-0" aria-hidden="true" />
-              <span>US, UK, UAE, CA, AU & IN</span>
+              <span>Serving Clients Worldwide</span>
             </span>
           </div>
 
           {/* High-Impact Executive Headline */}
-          <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.12] sm:leading-[1.08] tracking-tight">
             Engineering Bespoke Web Platforms That <span className="brand-gradient-text">Turn Search Traffic Into Revenue.</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-slate-200 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+          <p className="text-slate-200 text-sm sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
             Ink Urban architects high-converting web platforms and organic search dominance strategies for established legal practices, medical groups, and commercial enterprises.
           </p>
 
           {/* Call To Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-2 max-w-md sm:max-w-none mx-auto w-full">
             <button
               type="button"
               onClick={onOpenBookingModal}
-              className="w-full sm:w-auto group inline-flex flex-col items-center justify-center px-8 py-4 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
-              <div className="flex items-center space-x-2">
-                <span>Schedule Executive Strategy Call</span>
-                <ArrowRightIcon className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform flex-shrink-0" aria-hidden="true" />
-              </div>
-              <span className="text-[10px] font-medium text-rose-100 tracking-normal capitalize mt-0.5 opacity-90">
-                20-Min Technical & Growth Briefing
-              </span>
+              <span>Schedule Strategy Call</span>
+              <ArrowRightIcon className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform flex-shrink-0" aria-hidden="true" />
             </button>
 
             <button
               type="button"
               onClick={onOpenAuditModal}
-              className="w-full sm:w-auto group inline-flex flex-col items-center justify-center px-7 py-4 rounded-xl bg-[#0F1320] border border-rose-500/30 hover:border-rose-400 text-rose-200 font-semibold text-xs tracking-wider uppercase transition-all duration-200 hover:bg-[#1A1325] shadow-xl"
+              className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#0F1320] border border-rose-500/30 hover:border-rose-400 text-rose-200 font-semibold text-xs tracking-wider uppercase transition-all duration-200 hover:bg-[#1A1325] shadow-xl cursor-pointer"
             >
-              <div className="flex items-center space-x-2">
-                <VideoCameraIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
-                <span>Request 5-Min Video Teardown</span>
-              </div>
-              <span className="text-[10px] font-normal text-slate-300 tracking-normal capitalize mt-0.5">
-                Custom Video Audit Delivered in 24h
-              </span>
+              <VideoCameraIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
+              <span>Request 5-Min Video Teardown</span>
             </button>
           </div>
 
           {/* Guarantee Badges Bar */}
-          <div className="pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center max-w-3xl mx-auto">
-            <div className="flex items-center justify-center space-x-2.5 p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
+          <div className="pt-6 sm:pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-center max-w-3xl mx-auto">
+            <div className="flex items-center justify-center space-x-2.5 p-2.5 sm:p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
               <BoltIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
               <span><strong className="text-white">Sub-0.5s Speed:</strong> 100/100 Core Web Vitals</span>
             </div>
-            <div className="flex items-center justify-center space-x-2.5 p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
+            <div className="flex items-center justify-center space-x-2.5 p-2.5 sm:p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
               <ShieldCheckIcon className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
               <span><strong className="text-white">100% Bespoke Code:</strong> Zero Vulnerability Templates</span>
             </div>
-            <div className="flex items-center justify-center space-x-2.5 p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
+            <div className="flex items-center justify-center space-x-2.5 p-2.5 sm:p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
               <ArrowTrendingUpIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="text-white">3.2x ROI Lift:</strong> High-Intent Conversion Funnels</span>
+              <span><strong className="text-white">3.2x ROI Lift:</strong> High-Intent Funnels</span>
             </div>
           </div>
 
         </div>
 
         {/* Interactive Performance Benchmark Dashboard */}
-        <div className="mt-12 max-w-5xl mx-auto rounded-3xl glass-panel-dark-brand p-6 sm:p-8 shadow-2xl border border-rose-500/40">
+        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto rounded-2xl sm:rounded-3xl glass-panel-dark-brand p-4 sm:p-6 md:p-8 shadow-2xl border border-rose-500/40">
 
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
             <div className="space-y-1 text-center sm:text-left">
-              <h2 className="text-xl font-bold text-white">
+              <h2 className="text-lg sm:text-xl font-bold text-white">
                 Empirical Performance Benchmarks
               </h2>
               <p className="text-xs text-slate-300">
@@ -123,18 +113,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
             </div>
 
             {/* Tab Switcher */}
-            <div className="flex items-center p-1.5 rounded-xl bg-[#121626] border border-slate-800 space-x-1" role="tablist" aria-label="Performance benchmarks tabs">
+            <div className="grid grid-cols-3 w-full sm:w-auto p-1 sm:p-1.5 rounded-xl bg-[#121626] border border-slate-800 gap-1" role="tablist" aria-label="Performance benchmarks tabs">
               <button
                 type="button"
                 role="tab"
                 aria-selected={activeTab === 'speed'}
                 onClick={() => setActiveTab('speed')}
-                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeTab === 'speed'
+                className={`px-2.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${activeTab === 'speed'
                   ? 'brand-gradient-bg text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
                   }`}
               >
-                PageSpeed 100
+                PageSpeed
               </button>
 
               <button
@@ -142,12 +132,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
                 role="tab"
                 aria-selected={activeTab === 'seo'}
                 onClick={() => setActiveTab('seo')}
-                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeTab === 'seo'
+                className={`px-2.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${activeTab === 'seo'
                   ? 'brand-gradient-bg text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
                   }`}
               >
-                Map Pack SEO
+                Map Pack
               </button>
 
               <button
@@ -155,7 +145,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
                 role="tab"
                 aria-selected={activeTab === 'cro'}
                 onClick={() => setActiveTab('cro')}
-                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeTab === 'cro'
+                className={`px-2.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${activeTab === 'cro'
                   ? 'brand-gradient-bg text-white shadow-md'
                   : 'text-slate-400 hover:text-white'
                   }`}

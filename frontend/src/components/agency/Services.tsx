@@ -85,22 +85,22 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBookingModal }) => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
-            Engineering Solutions For <span className="brand-gradient-text">AI, Search & Revenue Growth</span>
+          <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+            Engineering Solutions For <span className="brand-gradient-text-light">AI, Search & Revenue Growth</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-600 text-sm sm:text-lg">
             Every solution we deliver focuses on technical excellence, strategic positioning, and measurable client acquisition.
           </p>
         </div>
 
         {/* Services Cards */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, idx) => {
             const Icon = service.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-2xl glass-panel border border-slate-200 hover:border-amber-400 transition-all duration-300 flex flex-col justify-between space-y-6 group shadow-sm"
+                className="p-5 sm:p-8 rounded-2xl glass-panel border border-slate-200 hover:border-amber-400 transition-all duration-300 flex flex-col justify-between space-y-6 group shadow-sm"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">

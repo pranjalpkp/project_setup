@@ -1,21 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Khand:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-heading: 'Khand', sans-serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-heading: var(--font-heading), 'Khand', sans-serif;
+  --font-sans: var(--font-sans), 'Inter', sans-serif;
 }
 
 /* Global Typography & Font Family Assignment */
 body {
   background-color: #07080C;
   color: #F8FAFC;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: 'Khand', sans-serif !important;
+  font-family: var(--font-heading), 'Khand', sans-serif !important;
   letter-spacing: 0.01em;
 }
 
@@ -53,16 +52,20 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Radiant Dark Hero Gradient Text */
 .brand-gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FB7185 45%, #E5C378 85%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FB7185 0%, #F43F5E 40%, #FBBF24 80%, #E5C378 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Light Section Gradient Text */
 .brand-gradient-text-light {
   background: linear-gradient(135deg, #E11D48 0%, #F43F5E 50%, #D97706 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Logo white badge for maximum visibility of black text */
@@ -123,3 +126,33 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 ::-webkit-scrollbar-thumb:hover {
   background: #f43f5e;
 }
+
+/* Infographic Pipeline Flow Animations */
+@keyframes pipelineFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.animate-pipeline-flow {
+  background: linear-gradient(90deg, #F43F5E 0%, #FB7185 25%, #F59E0B 50%, #FB7185 75%, #F43F5E 100%);
+  background-size: 200% 100%;
+  animation: pipelineFlow 3s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.35), 0 0 30px rgba(245, 158, 11, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(244, 63, 94, 0.65), 0 0 45px rgba(245, 158, 11, 0.35);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+

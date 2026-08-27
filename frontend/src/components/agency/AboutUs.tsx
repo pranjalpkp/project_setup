@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { 
-  GlobeAmericasIcon, 
-  ShieldCheckIcon, 
+import {
+  GlobeAmericasIcon,
+  ShieldCheckIcon,
   CheckCircleIcon,
   EnvelopeIcon
 } from '@heroicons/react/24/outline';
@@ -12,17 +12,17 @@ export const AboutUs: React.FC = () => {
   return (
     <section id="about" className="py-12 sm:py-16 bg-slate-50 border-t border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           {/* Left Column Copy */}
           <div className="lg:col-span-7 space-y-6">
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-              International Standards. <span className="brand-gradient-text">Focused Technical Execution.</span>
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+              International Standards. <span className="brand-gradient-text-light">Focused Technical Execution.</span>
             </h2>
 
             <p className="text-slate-700 text-base leading-relaxed">
-              <strong>Ink Urban</strong> is an international web development and search optimization agency. We build custom web applications and search dominance strategies for established service practices across North America, Europe, the Middle East, and Asia-Pacific.
+              <strong>Ink Urban</strong> is an international web development and search optimization agency. We build custom web applications and search dominance strategies for established service practices and ambitious enterprises worldwide.
             </p>
 
             <p className="text-slate-600 text-sm leading-relaxed">
@@ -61,15 +61,14 @@ export const AboutUs: React.FC = () => {
                 <EnvelopeIcon className="w-4 h-4 text-rose-500 flex-shrink-0" />
                 <span>inkurban.in@gmail.com</span>
               </a>
-              <span className="text-xs font-mono text-slate-500">Domain: inkurban.in</span>
             </div>
 
           </div>
 
           {/* Right Column Agency Highlights Box */}
           <div className="lg:col-span-5">
-            <div className="p-8 rounded-2xl glass-panel-brand border border-slate-200 space-y-6 shadow-xl relative overflow-hidden">
-              
+            <div className="p-5 sm:p-8 rounded-2xl glass-panel-light-brand bg-white border border-slate-200 space-y-6 shadow-xl relative overflow-hidden">
+
               <div className="flex items-center justify-between border-b border-rose-500/20 pb-4">
                 <h3 className="text-xl font-bold text-slate-900">
                   The Ink Urban Guarantee

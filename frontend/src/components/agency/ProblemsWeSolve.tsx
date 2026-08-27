@@ -62,7 +62,7 @@ export const ProblemsWeSolve: React.FC = () => {
             return (
               <div 
                 key={idx}
-                className="p-8 rounded-2xl glass-panel-dark border border-slate-800 hover:border-amber-400/60 transition-all duration-300 group space-y-6 shadow-xl"
+                className="p-5 sm:p-8 rounded-2xl glass-panel-dark border border-slate-800 hover:border-amber-400/60 transition-all duration-300 group space-y-6 shadow-xl"
               >
                 <div className="flex items-start justify-between">
                   <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
