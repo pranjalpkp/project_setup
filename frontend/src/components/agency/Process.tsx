@@ -74,11 +74,11 @@ export const Process: React.FC<ProcessProps> = ({ onOpenBookingModal }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+        <div className="text-center max-w-5xl mx-auto space-y-4">
+          <h2 className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-900 whitespace-nowrap tracking-tight">
             Audit → Strategy → Build → <span className="brand-gradient-text">Optimize</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto">
             A structured, predictable execution process. We handle technical engineering, strategic copywriting, and search optimization from start to finish.
           </p>
         </div>

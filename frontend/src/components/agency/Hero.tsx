@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  ArrowRightIcon, 
+import {
+  ArrowRightIcon,
   VideoCameraIcon,
   GlobeAltIcon,
   ShieldCheckIcon,
@@ -22,16 +22,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
 
   return (
     <section className="relative min-h-[85vh] pt-24 pb-14 overflow-hidden flex items-center justify-center bg-[#07080C] bg-radial-gradient-dark">
-      
+
       {/* Ambient Grid & Rose-Gold Radial Glows */}
       <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-rose-500/20 via-amber-600/15 to-transparent blur-[160px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        
+
         {/* Main Hero Header Stack */}
-        <div className="text-center max-w-5xl mx-auto space-y-8">
-          
+        <div className="text-center max-w-4xl mx-auto space-y-8">
+
           {/* Executive Social Proof Pill Bar */}
           <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 py-2 rounded-full bg-[#101422] border border-rose-500/30 text-xs font-semibold shadow-2xl">
             <span className="flex items-center space-x-2 text-rose-300 font-bold">
@@ -43,16 +43,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
               <StarIcon className="w-3.5 h-3.5 fill-amber-400 text-amber-400 flex-shrink-0" aria-hidden="true" />
               <span className="font-bold text-white">4.9/5 Rating</span>
             </div>
+            <span className="text-slate-600 hidden md:inline" aria-hidden="true">•</span>
+            <span className="hidden md:flex items-center space-x-1 text-slate-200 font-semibold">
+              <GlobeAltIcon className="w-3.5 h-3.5 text-rose-400 flex-shrink-0" aria-hidden="true" />
+              <span>US, UK, UAE, CA, AU & IN</span>
+            </span>
           </div>
 
-          {/* High-Impact Executive 2-Line Headline - Expanded Width */}
-          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.15] tracking-tight max-w-5xl sm:max-w-6xl mx-auto px-2">
-            Engineering Bespoke Web Platforms That <br className="hidden sm:inline" />
-            <span className="brand-gradient-text">Turn Search Traffic Into Revenue.</span>
+          {/* High-Impact Executive Headline */}
+          <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] tracking-tight">
+            Engineering Bespoke Web Platforms That <span className="brand-gradient-text">Turn Search Traffic Into Revenue.</span>
           </h1>
 
           {/* Subheading */}
-          <p className="text-slate-200 text-base sm:text-xl font-normal leading-relaxed max-w-4xl mx-auto">
+          <p className="text-slate-200 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
             Ink Urban architects high-converting web platforms and organic search dominance strategies for established legal practices, medical groups, and commercial enterprises.
           </p>
 
@@ -88,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
           </div>
 
           {/* Guarantee Badges Bar */}
-          <div className="pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center max-w-4xl mx-auto">
+          <div className="pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center max-w-3xl mx-auto">
             <div className="flex items-center justify-center space-x-2.5 p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
               <BoltIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
               <span><strong className="text-white">Sub-0.5s Speed:</strong> 100/100 Core Web Vitals</span>
@@ -107,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
 
         {/* Interactive Performance Benchmark Dashboard */}
         <div className="mt-12 max-w-5xl mx-auto rounded-3xl glass-panel-dark-brand p-6 sm:p-8 shadow-2xl border border-rose-500/40">
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
             <div className="space-y-1 text-center sm:text-left">
               <h2 className="text-xl font-bold text-white">
@@ -125,11 +129,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
                 role="tab"
                 aria-selected={activeTab === 'speed'}
                 onClick={() => setActiveTab('speed')}
-                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
-                  activeTab === 'speed'
-                    ? 'brand-gradient-bg text-white shadow-md'
-                    : 'text-slate-400 hover:text-white'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeTab === 'speed'
+                  ? 'brand-gradient-bg text-white shadow-md'
+                  : 'text-slate-400 hover:text-white'
+                  }`}
               >
                 PageSpeed 100
               </button>
@@ -139,11 +142,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
                 role="tab"
                 aria-selected={activeTab === 'seo'}
                 onClick={() => setActiveTab('seo')}
-                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
-                  activeTab === 'seo'
-                    ? 'brand-gradient-bg text-white shadow-md'
-                    : 'text-slate-400 hover:text-white'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeTab === 'seo'
+                  ? 'brand-gradient-bg text-white shadow-md'
+                  : 'text-slate-400 hover:text-white'
+                  }`}
               >
                 Map Pack SEO
               </button>
@@ -153,11 +155,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal
                 role="tab"
                 aria-selected={activeTab === 'cro'}
                 onClick={() => setActiveTab('cro')}
-                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${
-                  activeTab === 'cro'
-                    ? 'brand-gradient-bg text-white shadow-md'
-                    : 'text-slate-400 hover:text-white'
-                }`}
+                className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all ${activeTab === 'cro'
+                  ? 'brand-gradient-bg text-white shadow-md'
+                  : 'text-slate-400 hover:text-white'
+                  }`}
               >
                 Lead CRO
               </button>

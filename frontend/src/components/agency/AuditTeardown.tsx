@@ -90,7 +90,7 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
               <ul className="space-y-4 text-sm text-slate-700">
                 <li className="flex items-start space-x-3">
                   <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Vague Headline:</strong> "Welcome to our clinic / law firm" with zero outcome offer.</span>
+                  <span><strong>Vague Headline:</strong> &quot;Welcome to our clinic / law firm&quot; with zero outcome offer.</span>
                 </li>
                 <li className="flex items-start space-x-3">
                   <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />

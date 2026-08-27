@@ -103,25 +103,25 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditM
               Services & Capabilities
             </h3>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><a href="/#services" className="hover:text-white transition-colors">Agentic AI & Multi-Agent Workflows</a></li>
-              <li><a href="/#services" className="hover:text-white transition-colors">Custom High-Performance Web Architecture</a></li>
-              <li><a href="/#services" className="hover:text-white transition-colors">Conversion Rate Optimization (CRO)</a></li>
-              <li><a href="/#services" className="hover:text-white transition-colors">Local & Global Map Pack SEO</a></li>
-              <li><a href="/#services" className="hover:text-white transition-colors">Sub-Second Infrastructure Speed</a></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Agentic AI & Multi-Agent Workflows</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Custom High-Performance Web Architecture</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Conversion Rate Optimization (CRO)</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Local & Global Map Pack SEO</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Sub-Second Infrastructure Speed</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Industry Sectors Column */}
+          {/* Column 3: Agency & Overview Column */}
           <div className="lg:col-span-3 space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-amber-300">
-              Target Industry Sectors
+              Agency & Overview
             </h3>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><a href="/#industries" className="hover:text-white transition-colors">Med Spas & Aesthetic Clinics</a></li>
-              <li><a href="/#industries" className="hover:text-white transition-colors">Cosmetic Dentists & Restorative</a></li>
-              <li><a href="/#industries" className="hover:text-white transition-colors">Law Firms & Legal Practices</a></li>
-              <li><a href="/#industries" className="hover:text-white transition-colors">HVAC & Roofing Contractors</a></li>
-              <li><a href="/#industries" className="hover:text-white transition-colors">Professional Advisory Practices</a></li>
+              <li><Link href="/#about" className="hover:text-white transition-colors">About Ink Urban</Link></li>
+              <li><Link href="/#process" className="hover:text-white transition-colors">Proven 4-Step Process</Link></li>
+              <li><Link href="/#case-studies" className="hover:text-white transition-colors">Case Studies & Benchmarks</Link></li>
+              <li><Link href="/#audit-teardown" className="hover:text-white transition-colors">Interactive Website Audit</Link></li>
+              <li><Link href="/#faq" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
             </ul>
           </div>
 
