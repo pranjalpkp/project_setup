@@ -67,9 +67,9 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-fadeIn" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md animate-fadeIn" role="dialog" aria-modal="true">
       <div 
-        className="relative w-full max-w-xl bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden brand-glow"
+        className="relative w-full max-w-xl bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto brand-glow"
         onClick={(e) => e.stopPropagation()}
       >
         
@@ -78,7 +78,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
           type="button"
           onClick={handleClose}
           aria-label="Close website audit modal"
-          className="absolute top-5 right-5 p-2 text-slate-600 hover:text-slate-900 rounded-xl bg-slate-100 border border-slate-300"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 rounded-xl bg-slate-100 border border-slate-300 z-10 cursor-pointer"
         >
           <XMarkIcon className="w-5 h-5" aria-hidden="true" />
         </button>

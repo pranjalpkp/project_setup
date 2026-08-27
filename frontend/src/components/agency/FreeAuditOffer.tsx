@@ -39,7 +39,7 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
     <section id="audit-offer" className="py-12 sm:py-16 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="relative rounded-3xl glass-panel-brand p-8 sm:p-12 border border-slate-200 shadow-xl overflow-hidden brand-glow">
+        <div className="relative rounded-3xl glass-panel-light-brand bg-white p-6 sm:p-10 md:p-12 border border-slate-200 shadow-xl overflow-hidden brand-glow">
           
           {/* Background Ambient Glow */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -55,7 +55,7 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
               </div>
 
               <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-                Request a <span className="brand-gradient-text">Technical Website Audit</span> & Analysis
+                Request a <span className="brand-gradient-text-light">Technical Website Audit</span> & Analysis
               </h2>
 
               <p className="text-slate-700 text-base leading-relaxed">
@@ -92,7 +92,7 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
 
             {/* Right Form Card */}
             <div className="lg:col-span-6">
-              <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 space-y-5 shadow-xl">
+              <div className="p-5 sm:p-8 rounded-2xl bg-white border border-slate-200 space-y-5 shadow-xl">
                 
                 <div className="text-left space-y-1">
                   <h3 className="text-xl font-bold text-slate-900">
@@ -155,9 +155,9 @@ export const FreeAuditOffer: React.FC<FreeAuditOfferProps> = ({ onOpenAuditModal
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl brand-gradient-bg text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 flex items-center justify-center space-x-2"
+                    className="w-full py-3.5 sm:py-4 rounded-xl brand-gradient-bg text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 flex items-center justify-center space-x-2 cursor-pointer"
                   >
-                    <SparklesIcon className="w-5 h-5 text-white" aria-hidden="true" />
+                    <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white flex-shrink-0" aria-hidden="true" />
                     <span>{isSubmitting ? 'Generating Audit Request...' : 'Send Me My Free Video Audit'}</span>
                   </button>
                 </form>

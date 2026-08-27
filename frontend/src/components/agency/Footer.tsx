@@ -2,14 +2,36 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { EnvelopeIcon, GlobeAltIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next/navigation';
+import { EnvelopeIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
 
 interface FooterProps {
-  onOpenBookingModal: () => void;
-  onOpenAuditModal: () => void;
+  onOpenBookingModal?: () => void;
+  onOpenAuditModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditModal }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onOpenBookingModal,
+  onOpenAuditModal
+}) => {
+  const router = useRouter();
+
+  const handleBooking = () => {
+    if (onOpenBookingModal) {
+      onOpenBookingModal();
+    } else {
+      router.push('/#booking');
+    }
+  };
+
+  const handleAudit = () => {
+    if (onOpenAuditModal) {
+      onOpenAuditModal();
+    } else {
+      router.push('/#audit');
+    }
+  };
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -19,28 +41,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditM
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
         {/* Top Footer Call-To-Action Banner */}
-        <div className="p-8 sm:p-10 rounded-2xl glass-panel-dark-brand border border-rose-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div className="p-5 sm:p-8 md:p-10 rounded-2xl glass-panel-dark-brand border border-rose-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2 text-center md:text-left">
-            <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white">
+            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-white">
               Ready To Dominate Your Market <span className="brand-gradient-text">Globally?</span>
             </h2>
-            <p className="text-slate-200 text-sm max-w-xl">
+            <p className="text-slate-200 text-xs sm:text-sm max-w-xl">
               Schedule a 30-minute consultation or request a complimentary 15-point video website audit.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
             <button
               type="button"
-              onClick={onOpenAuditModal}
-              className="px-5 py-3 rounded-xl border border-amber-400/40 text-amber-200 font-semibold text-xs uppercase tracking-wider hover:bg-amber-400/10 hover:text-amber-300"
+              onClick={handleAudit}
+              className="w-full sm:w-auto text-center px-5 py-3 rounded-xl border border-amber-400/40 text-amber-200 font-semibold text-xs uppercase tracking-wider hover:bg-amber-400/10 hover:text-amber-300 cursor-pointer"
             >
               Request Technical Audit
             </button>
             <button
               type="button"
-              onClick={onOpenBookingModal}
-              className="px-6 py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all"
+              onClick={handleBooking}
+              className="w-full sm:w-auto text-center px-6 py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all cursor-pointer"
             >
               Schedule Strategy Call
             </button>
@@ -79,8 +101,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditM
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <GlobeAltIcon className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
-                <span>Official Domain: <strong className="text-white">inkurban.in</strong></span>
+                <svg className="w-4 h-4 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416c-4.298 0-7.79 3.491-7.79 7.788 0 1.492.423 2.889 1.157 4.081l-1.398 5.111 5.251-1.377c1.139.67 2.457 1.055 3.866 1.055 4.299 0 7.79-3.492 7.79-7.789 0-4.297-3.491-7.788-7.79-7.788zm0 14.137c-1.231 0-2.385-.36-3.354-.98l-.24-.153-2.483.651.663-2.42-.157-.249c-.689-1.096-1.054-2.368-1.054-3.676 0-3.626 2.951-6.577 6.578-6.577 3.626 0 6.577 2.951 6.577 6.577 0 3.626-2.951 6.577-6.577 6.577z"/>
+                </svg>
+                <a 
+                  href="https://wa.me/918340123740" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-emerald-400 font-semibold transition-colors"
+                >
+                  WhatsApp: +91 83401 23740
+                </a>
               </div>
             </div>
 
@@ -119,7 +150,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditM
             <ul className="space-y-2 text-xs text-slate-300">
               <li><Link href="/#about" className="hover:text-white transition-colors">About Ink Urban</Link></li>
               <li><Link href="/#process" className="hover:text-white transition-colors">Proven 4-Step Process</Link></li>
-              <li><Link href="/#case-studies" className="hover:text-white transition-colors">Case Studies & Benchmarks</Link></li>
+              <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies & Benchmarks</Link></li>
               <li><Link href="/#audit-teardown" className="hover:text-white transition-colors">Interactive Website Audit</Link></li>
               <li><Link href="/#faq" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
             </ul>
@@ -130,51 +161,42 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditM
             <h3 className="text-xs font-bold uppercase tracking-wider text-amber-300">
               Social Channels
             </h3>
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2.5">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/inkurban/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ink Urban LinkedIn"
-                className="w-8 h-8 rounded-lg bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-amber-300 hover:border-amber-400/50 transition-all text-xs font-bold"
+                className="w-9 h-9 rounded-xl bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-[#0A66C2] hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10 transition-all shadow-md"
+                title="Ink Urban LinkedIn"
               >
-                In
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.4 1.4 0 1 0-.01-2.8 1.4 1.4 0 0 0 .01 2.8m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+                </svg>
               </a>
               <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ink Urban Twitter / X"
-                className="w-8 h-8 rounded-lg bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-amber-300 hover:border-amber-400/50 transition-all text-xs font-bold"
-              >
-                𝕏
-              </a>
-              <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/inkurban.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ink Urban Instagram"
-                className="w-8 h-8 rounded-lg bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-amber-300 hover:border-amber-400/50 transition-all text-xs font-bold"
+                className="w-9 h-9 rounded-xl bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-[#E4405F] hover:border-[#E4405F]/60 hover:bg-[#E4405F]/10 transition-all shadow-md"
+                title="Ink Urban Instagram"
               >
-                Ig
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://wa.me/918340123740"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Ink Urban YouTube"
-                className="w-8 h-8 rounded-lg bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-amber-300 hover:border-amber-400/50 transition-all text-xs font-bold"
+                aria-label="Ink Urban WhatsApp"
+                className="w-9 h-9 rounded-xl bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:border-emerald-400/60 hover:bg-emerald-400/10 transition-all shadow-md"
+                title="Ink Urban WhatsApp"
               >
-                Yt
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Ink Urban GitHub"
-                className="w-8 h-8 rounded-lg bg-[#0F1322] border border-slate-800 flex items-center justify-center text-slate-300 hover:text-amber-300 hover:border-amber-400/50 transition-all text-xs font-bold"
-              >
-                Git
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.392-10.416c-4.298 0-7.79 3.491-7.79 7.788 0 1.492.423 2.889 1.157 4.081l-1.398 5.111 5.251-1.377c1.139.67 2.457 1.055 3.866 1.055 4.299 0 7.79-3.492 7.79-7.789 0-4.297-3.491-7.788-7.79-7.788zm0 14.137c-1.231 0-2.385-.36-3.354-.98l-.24-.153-2.483.651.663-2.42-.157-.249c-.689-1.096-1.054-2.368-1.054-3.676 0-3.626 2.951-6.577 6.578-6.577 3.626 0 6.577 2.951 6.577 6.577 0 3.626-2.951 6.577-6.577 6.577z"/>
+                </svg>
               </a>
             </div>
 
@@ -194,12 +216,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBookingModal, onOpenAuditM
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 text-center sm:text-left">
           <div>
-            &copy; {new Date().getFullYear()} Ink Urban LLP (inkurban.in). International web development & search optimization practice servicing client enterprises worldwide.
+            &copy; {new Date().getFullYear()} INK URBAN LLP (inkurban.in)
           </div>
 
-          <div className="flex items-center space-x-6 flex-shrink-0">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6 flex-shrink-0">
             <Link href="/privacy" className="hover:text-amber-300 transition-colors">
               Privacy Policy
             </Link>

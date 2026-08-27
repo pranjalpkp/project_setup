@@ -114,7 +114,7 @@ export const Industries: React.FC<IndustriesProps> = ({ onOpenBookingModal }) =>
         </div>
 
         {/* Industry Selector Tabs */}
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
+        <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-2 sm:gap-3">
           {niches.map((niche, idx) => {
             const Icon = niche.icon;
             const isSelected = activeNiche === idx;
@@ -123,7 +123,7 @@ export const Industries: React.FC<IndustriesProps> = ({ onOpenBookingModal }) =>
                 key={niche.id}
                 type="button"
                 onClick={() => setActiveNiche(idx)}
-                className={`flex items-center space-x-2.5 px-5 py-3 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 border ${
+                className={`flex items-center space-x-2 px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 border cursor-pointer ${
                   isSelected
                     ? 'brand-gradient-bg text-white border-rose-500 shadow-lg shadow-rose-500/25 scale-105'
                     : 'bg-[#0F1320] text-slate-300 border-slate-800 hover:border-amber-400/60 hover:text-amber-300 hover:bg-[#151B2E]'
@@ -137,7 +137,7 @@ export const Industries: React.FC<IndustriesProps> = ({ onOpenBookingModal }) =>
         </div>
 
         {/* Selected Niche Showcase Card */}
-        <div className="mt-10 p-8 sm:p-10 rounded-2xl glass-panel-dark-brand space-y-8 border border-rose-500/30 shadow-2xl relative overflow-hidden">
+        <div className="mt-8 sm:mt-10 p-5 sm:p-8 sm:p-10 rounded-2xl glass-panel-dark-brand space-y-6 sm:space-y-8 border border-rose-500/30 shadow-2xl relative overflow-hidden">
           
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
             <div className="flex items-center space-x-4">

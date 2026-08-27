@@ -40,7 +40,7 @@ export const FAQ: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
-            Everything You Need To Know
+            Everything You Need To <span className="brand-gradient-text-light">Know</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
             Clear, honest answers about our international workflow, technical stack, turnaround times, and pricing model.

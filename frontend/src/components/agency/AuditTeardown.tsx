@@ -34,15 +34,15 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
         </div>
 
         {/* Interactive Feature Switcher */}
-        <div className="mt-12 flex justify-center">
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300 space-x-2">
+        <div className="mt-8 sm:mt-12 flex justify-center w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-3 w-full sm:w-auto p-1 sm:p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300 gap-1.5 sm:space-x-2 sm:gap-0">
             <button
               type="button"
               onClick={() => setActiveTab('conversion')}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${
                 activeTab === 'conversion'
                   ? 'brand-gradient-bg text-white shadow-lg shadow-rose-500/25'
-                  : 'text-slate-700 hover:text-slate-900'
+                  : 'text-slate-700 hover:text-slate-900 bg-white/40 sm:bg-transparent'
               }`}
             >
               Conversion Architecture
@@ -50,10 +50,10 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
             <button
               type="button"
               onClick={() => setActiveTab('speed')}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${
                 activeTab === 'speed'
                   ? 'brand-gradient-bg text-white shadow-lg shadow-rose-500/25'
-                  : 'text-slate-700 hover:text-slate-900'
+                  : 'text-slate-700 hover:text-slate-900 bg-white/40 sm:bg-transparent'
               }`}
             >
               Speed & Core Vitals
@@ -61,10 +61,10 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
             <button
               type="button"
               onClick={() => setActiveTab('seo')}
-              className={`px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all ${
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${
                 activeTab === 'seo'
                   ? 'brand-gradient-bg text-white shadow-lg shadow-rose-500/25'
-                  : 'text-slate-700 hover:text-slate-900'
+                  : 'text-slate-700 hover:text-slate-900 bg-white/40 sm:bg-transparent'
               }`}
             >
               Local SEO Engine
@@ -76,7 +76,7 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Typical Generic Site (The Problem) */}
-          <div className="p-8 rounded-2xl bg-red-50/80 border border-red-300 space-y-6 relative overflow-hidden shadow-md">
+          <div className="p-5 sm:p-8 rounded-2xl bg-red-50/80 border border-red-300 space-y-6 relative overflow-hidden shadow-md">
             <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl bg-red-500/10 border-b border-l border-red-500/30 text-red-600 text-xs font-bold uppercase tracking-wider">
               Typical Freelancer / Template Site
             </div>
@@ -147,7 +147,7 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
           </div>
 
           {/* Ink Urban Engineered Website (The Solution) */}
-          <div className="p-8 rounded-2xl glass-panel-light-brand space-y-6 relative overflow-hidden shadow-xl brand-glow border border-rose-300">
+          <div className="p-5 sm:p-8 rounded-2xl glass-panel-light-brand space-y-6 relative overflow-hidden shadow-xl brand-glow border border-rose-300">
             <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl bg-rose-500/20 border-b border-l border-rose-500/40 text-rose-700 text-xs font-bold uppercase tracking-wider">
               Ink Urban Growth Engine
             </div>
@@ -220,16 +220,16 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
         </div>
 
         {/* Free Video Audit Banner */}
-        <div className="mt-16 p-8 rounded-2xl bg-white border border-slate-300 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="mt-12 sm:mt-16 p-5 sm:p-8 rounded-2xl bg-white border border-slate-300 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-2 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2 text-rose-600 text-xs font-bold uppercase tracking-wider">
               <VideoCameraIcon className="w-4 h-4" />
               <span>Complimentary Growth Offer</span>
             </div>
-            <h4 className="text-xl font-bold text-slate-900">
+            <h4 className="text-lg sm:text-xl font-bold text-slate-900">
               Want a 15-Point Video Teardown of Your Current Website?
             </h4>
-            <p className="text-slate-600 text-sm max-w-2xl">
+            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl">
               We will record a personalized 15-minute video auditing your conversion leaks, speed bottlenecks, and local SEO gaps — 100% free with no obligation.
             </p>
           </div>
@@ -237,7 +237,7 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
           <button
             type="button"
             onClick={onOpenAuditModal}
-            className="px-7 py-3.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:scale-105 transition-all flex items-center space-x-2 flex-shrink-0"
+            className="w-full sm:w-auto justify-center px-6 sm:px-7 py-3.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:scale-105 transition-all flex items-center space-x-2 flex-shrink-0 cursor-pointer"
           >
             <span>Request My Free Audit</span>
             <ArrowRightIcon className="w-4 h-4 text-white" />

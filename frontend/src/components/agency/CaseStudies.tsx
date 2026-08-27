@@ -1,62 +1,32 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { 
   MapPinIcon, 
-  InformationCircleIcon,
-  ArrowRightIcon
+  InformationCircleIcon, 
+  ArrowRightIcon,
+  ArrowTopRightOnSquareIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline';
+import { caseStudiesData } from '@/data/caseStudiesData';
 
 interface CaseStudiesProps {
   onOpenBookingModal: () => void;
 }
 
 export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenBookingModal }) => {
-  const caseStudies = [
-    {
-      clientType: "Aesthetic Clinic Practice",
-      location: "Metropolitan Market",
-      niche: "Medical Aesthetics & Wellness",
-      challenge: "High cost per click on paid advertising with an underperforming website converting under 1.1% of mobile visitors due to slow page loads.",
-      solution: "Engineered a bespoke high-performance web application with sub-second page rendering, streamlined consultation intake, and targeted local SEO positioning.",
-      metrics: [
-        { label: "Inquiry Volume", value: "+184%", change: "From 14/mo to 40+/mo" },
-        { label: "Page Speed Score", value: "99/100", change: "Core Web Vitals optimized" },
-        { label: "Google Map Rank", value: "Top 3", change: "Key Metro search terms" }
-      ]
-    },
-    {
-      clientType: "Commercial Law Firm",
-      location: "Capital Metro Market",
-      niche: "Corporate & Commercial Practice",
-      challenge: "Outdated legacy website failed to convey partner track record, causing prospective corporate clients to bounce to competing firms.",
-      solution: "Created an editorial brand identity, structured partner track record showcases, and a secure consultation intake pathway.",
-      metrics: [
-        { label: "Inquiry Rate", value: "3.4x", change: "Higher conversion rate" },
-        { label: "Organic Search", value: "+210%", change: "Targeting primary postcodes" },
-        { label: "Mobile Bounce", value: "-45%", change: "Reduced visitor drop-off" }
-      ]
-    },
-    {
-      clientType: "Commercial HVAC Enterprise",
-      location: "Commercial Hub Market",
-      niche: "HVAC & Commercial Contracting",
-      challenge: "Limited search visibility outside primary home zip code, losing commercial replacement contracts to regional competitors.",
-      solution: "Built a hyper-local SEO entity architecture across 15 target suburban postcodes with mobile-first contact routing.",
-      metrics: [
-        { label: "Suburban Rankings", value: "#1 Rank", change: "Across 12 postcodes" },
-        { label: "Inbound Call Volume", value: "+160%", change: "Peak seasonal surge" },
-        { label: "Project Intake", value: "Commercial", change: "System replacement focus" }
-      ]
-    }
-  ];
-
   return (
-    <section id="case-studies" className="py-12 sm:py-16 bg-[#07080C] relative border-t border-slate-800">
+    <section id="case-studies" className="py-16 sm:py-20 bg-[#07080C] relative border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-wider">
+            <SparklesIcon className="w-4 h-4" />
+            <span>Empirical Track Record</span>
+          </div>
+
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Proven Strategy. <span className="brand-gradient-text">Measurable Results.</span>
           </h2>
@@ -75,10 +45,10 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenBookingModal }) 
 
         {/* Case Studies Grid */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {caseStudies.map((cs, idx) => (
-            <div
-              key={idx}
-              className="p-8 rounded-2xl glass-panel-dark-brand border border-rose-500/30 hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between space-y-6 group shadow-xl"
+          {caseStudiesData.map((cs) => (
+            <article
+              key={cs.slug}
+              className="p-5 sm:p-8 rounded-2xl glass-panel-dark-brand border border-rose-500/30 hover:border-amber-400/60 transition-all duration-300 flex flex-col justify-between space-y-6 group shadow-xl"
             >
               <div className="space-y-4">
                 
@@ -92,19 +62,25 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenBookingModal }) 
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">
-                  {cs.clientType}
-                </h3>
+                <Link 
+                  href={`/case-studies/${cs.slug}`}
+                  className="block group/title"
+                >
+                  <h3 className="text-xl font-bold text-white group-hover/title:text-amber-300 transition-colors flex items-center justify-between">
+                    <span>{cs.clientType}</span>
+                    <ArrowTopRightOnSquareIcon className="w-4 h-4 text-slate-500 group-hover/title:text-amber-400 opacity-0 group-hover/title:opacity-100 transition-all" />
+                  </h3>
+                </Link>
 
                 <div className="space-y-3 pt-2">
                   <div className="p-3.5 rounded-xl bg-[#090C16] border border-red-500/20 text-xs text-slate-300 space-y-1">
                     <span className="font-bold text-red-400">The Problem: </span>
-                    <span>{cs.challenge}</span>
+                    <span className="line-clamp-2">{cs.challenge}</span>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-[#090C16] border border-emerald-500/20 text-xs text-slate-300 space-y-1">
                     <span className="font-bold text-emerald-400">Ink Urban Solution: </span>
-                    <span>{cs.solution}</span>
+                    <span className="line-clamp-2">{cs.solution}</span>
                   </div>
                 </div>
 
@@ -126,19 +102,38 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ onOpenBookingModal }) 
 
               </div>
 
-              <div className="pt-4 border-t border-slate-800">
+              {/* Action Links */}
+              <div className="pt-4 border-t border-slate-800 space-y-2.5">
+                <Link
+                  href={`/case-studies/${cs.slug}`}
+                  className="w-full py-2.5 rounded-xl brand-gradient-bg text-white hover:opacity-95 font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-2 shadow-lg shadow-rose-500/20"
+                >
+                  <span>Explore Full Case Study</span>
+                  <ArrowRightIcon className="w-4 h-4 text-white" />
+                </Link>
+
                 <button
                   type="button"
                   onClick={onOpenBookingModal}
-                  className="w-full py-2.5 rounded-xl bg-[#131726] hover:bg-[#1C2238] border border-slate-700 hover:border-amber-400/60 text-amber-200 hover:text-amber-300 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center space-x-2"
+                  className="w-full py-2 rounded-xl bg-[#131726] hover:bg-[#1C2238] border border-slate-700 hover:border-amber-400/40 text-slate-300 hover:text-amber-300 text-xs font-semibold uppercase tracking-wider transition-all flex items-center justify-center space-x-1.5"
                 >
                   <span>Replicate These Results</span>
-                  <ArrowRightIcon className="w-4 h-4 text-amber-400" />
                 </button>
               </div>
 
-            </div>
+            </article>
           ))}
+        </div>
+
+        {/* View All Case Studies Link Banner */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[#131726] border border-amber-500/30 hover:border-amber-400 text-amber-200 hover:text-amber-300 text-xs font-bold uppercase tracking-wider transition-all shadow-lg hover:scale-105"
+          >
+            <span>Browse All Case Studies & Empirical Benchmarks</span>
+            <ArrowRightIcon className="w-4 h-4 text-amber-400" />
+          </Link>
         </div>
 
       </div>

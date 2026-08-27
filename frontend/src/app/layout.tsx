@@ -1,7 +1,22 @@
 import type { Metadata, Viewport } from 'next';
+import { Inter, Khand } from 'next/font/google';
 import './globals.css';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from '../context/ThemeContext';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const khand = Khand({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -61,12 +76,17 @@ const jsonLd = {
   'logo': 'https://inkurban.in/images/ink_logo.png',
   'email': 'inkurban.in@gmail.com',
   'description': 'Ink Urban LLP is a premium web development and SEO growth agency targeting high-paying international service businesses.',
-  'areaServed': ['US', 'GB', 'AE', 'CA', 'AU'],
+  'areaServed': 'Worldwide',
   'serviceType': [
     'Custom High-Converting Web Design',
     'Conversion Rate Optimization (CRO)',
     'Local & Global SEO Growth',
     'Website Performance & Speed Engineering'
+  ],
+  'telephone': '+918340123740',
+  'sameAs': [
+    'https://www.linkedin.com/company/inkurban/',
+    'https://www.instagram.com/inkurban.in'
   ],
   'priceRange': '$$$$',
 };
@@ -82,15 +102,12 @@ export default function RootLayout({
         <link rel="icon" href="/images/ink_fav.png" type="image/png" />
         <link rel="shortcut icon" href="/images/ink_fav.png" type="image/png" />
         <link rel="apple-touch-icon" href="/images/ink_fav.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Khand:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased selection:bg-rose-500/30 selection:text-white">
+      <body className={`${inter.variable} ${khand.variable} antialiased selection:bg-rose-500/30 selection:text-white font-sans`}>
         <ThemeProvider>
           {children}
           <Toaster
