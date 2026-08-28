@@ -26,23 +26,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Ink Urban LLP | Premium Web Development, CRO & SEO Growth Agency',
-  description: 'Ink Urban LLP designs high-converting websites and executes search dominance strategies for ambitious service businesses worldwide.',
+  title: 'Ink Urban | Bespoke Web Development & Digital Engineering Agency',
+  description: 'Ink Urban is a premier web development agency. We engineer custom web applications, SaaS platforms, and enterprise digital solutions — backed by deep technical website and performance auditing.',
   icons: {
     icon: '/images/ink_fav.png',
     shortcut: '/images/ink_fav.png',
     apple: '/images/ink_fav.png',
   },
   keywords: [
+    'Ink Urban',
     'Ink Urban LLP',
     'inkurban.in',
-    'premium web development agency',
-    'conversion rate optimization agency',
-    'SEO growth agency',
-    'med spa web design',
-    'law firm website design',
-    'cosmetic dentist SEO',
-    'HVAC web growth'
+    'web development agency',
+    'custom web application development',
+    'SaaS development agency',
+    'Next.js web development',
+    'enterprise web platforms',
+    'website audit agency',
+    'performance engineering',
+    'UI/UX design systems'
   ],
   authors: [{ name: 'Ink Urban LLP' }],
   metadataBase: new URL('https://inkurban.in'),
@@ -50,8 +52,8 @@ export const metadata: Metadata = {
     canonical: 'https://inkurban.in',
   },
   openGraph: {
-    title: 'Ink Urban LLP | High-Converting Websites & SEO Growth Engine',
-    description: 'We turn websites into your #1 lead generation engine for high-ticket client enterprises worldwide.',
+    title: 'Ink Urban | Bespoke Web Development & Digital Engineering Agency',
+    description: 'We engineer custom web applications, high-performance web platforms, and provide deep technical website audits for growing enterprises.',
     url: 'https://inkurban.in',
     siteName: 'Ink Urban LLP',
     locale: 'en_US',
@@ -59,8 +61,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ink Urban LLP | Web & SEO Growth Agency',
-    description: 'Bespoke web design, CRO & high-intent SEO for strategic service providers worldwide.',
+    title: 'Ink Urban | Bespoke Web Development & Engineering Agency',
+    description: 'Bespoke web applications, high-performance web platforms, and deep technical website auditing.',
   },
   robots: {
     index: true,
@@ -75,13 +77,15 @@ const jsonLd = {
   'url': 'https://inkurban.in',
   'logo': 'https://inkurban.in/images/ink_logo.png',
   'email': 'inkurban.in@gmail.com',
-  'description': 'Ink Urban LLP is a premium web development and SEO growth agency targeting high-paying international service businesses.',
+  'description': 'Ink Urban LLP is a bespoke web development and digital engineering agency specializing in custom web applications, enterprise digital platforms, and technical website auditing.',
   'areaServed': 'Worldwide',
   'serviceType': [
-    'Custom High-Converting Web Design',
-    'Conversion Rate Optimization (CRO)',
-    'Local & Global SEO Growth',
-    'Website Performance & Speed Engineering'
+    'Custom Web Application Development',
+    'Enterprise Web Platform Engineering',
+    'SaaS & Dashboard Development',
+    'UI/UX Design Systems',
+    'Technical Website & Security Auditing',
+    'Conversion Rate Optimization & SEO'
   ],
   'telephone': '+918340123740',
   'sameAs': [

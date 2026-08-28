@@ -2,113 +2,70 @@
 
 import React from 'react';
 import {
-  GlobeAmericasIcon,
   ShieldCheckIcon,
   CheckCircleIcon,
-  EnvelopeIcon
+  EnvelopeIcon,
+  CodeBracketIcon
 } from '@heroicons/react/24/outline';
 
 export const AboutUs: React.FC = () => {
   return (
-    <section id="about" className="py-12 sm:py-16 bg-slate-50 border-t border-slate-200 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-14 sm:py-16 bg-slate-50 border-t border-slate-200 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-          {/* Left Column Copy */}
-          <div className="lg:col-span-7 space-y-6">
-            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
-              International Standards. <span className="brand-gradient-text-light">Focused Technical Execution.</span>
-            </h2>
-
-            <p className="text-slate-700 text-base leading-relaxed">
-              <strong>Ink Urban</strong> is an international web development and search optimization agency. We build custom web applications and search dominance strategies for established service practices and ambitious enterprises worldwide.
-            </p>
-
-            <p className="text-slate-600 text-sm leading-relaxed">
-              We operate as a dedicated technical practice. Every project is directly managed by senior engineers and search strategists who focus on code efficiency, user experience, and search engine compliance.
-            </p>
-
-            {/* Core Value Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-xl bg-white border border-slate-200 space-y-2 shadow-sm">
-                <div className="flex items-center space-x-2 text-rose-600 font-bold text-sm">
-                  <ShieldCheckIcon className="w-5 h-5 flex-shrink-0" />
-                  <span>Performance Engineering</span>
-                </div>
-                <p className="text-xs text-slate-600">
-                  Every page layout, asset, and component is engineered for sub-second page rendering and high conversion performance.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-white border border-slate-200 space-y-2 shadow-sm">
-                <div className="flex items-center space-x-2 text-rose-600 font-bold text-sm">
-                  <GlobeAmericasIcon className="w-5 h-5 flex-shrink-0" />
-                  <span>Time-Zone Aligned Workflow</span>
-                </div>
-                <p className="text-xs text-slate-600">
-                  Structured communication aligned seamlessly across all major international time zones.
-                </p>
-              </div>
+          {/* Left Column */}
+          <div className="lg:col-span-6 space-y-4 text-left">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-600 text-xs font-semibold uppercase tracking-wider">
+              <CodeBracketIcon className="w-3.5 h-3.5" />
+              <span>About Ink Urban</span>
             </div>
 
-            {/* Contact Detail Direct Link */}
-            <div className="pt-4 flex items-center space-x-4">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+              Bespoke Web Development. <br />
+              <span className="brand-gradient-text-light">Senior Engineering Culture.</span>
+            </h2>
+
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Ink Urban is a full-stack digital engineering practice. We build custom web applications, high-performance SaaS platforms, and enterprise digital flagships with zero template bloat.
+            </p>
+
+            <div className="pt-2">
               <a
                 href="mailto:inkurban.in@gmail.com"
-                className="inline-flex items-center space-x-2 text-xs font-semibold text-rose-600 hover:text-rose-700 px-4 py-2.5 rounded-xl bg-white border border-slate-300 shadow-sm"
+                className="inline-flex items-center space-x-2 text-xs font-semibold text-rose-600 hover:text-rose-700 px-4 py-2.5 rounded-xl bg-white border border-slate-300 shadow-sm transition-colors"
               >
-                <EnvelopeIcon className="w-4 h-4 text-rose-500 flex-shrink-0" />
+                <EnvelopeIcon className="w-4 h-4 text-rose-500" />
                 <span>inkurban.in@gmail.com</span>
               </a>
             </div>
-
           </div>
 
-          {/* Right Column Agency Highlights Box */}
-          <div className="lg:col-span-5">
-            <div className="p-5 sm:p-8 rounded-2xl glass-panel-light-brand bg-white border border-slate-200 space-y-6 shadow-xl relative overflow-hidden">
-
-              <div className="flex items-center justify-between border-b border-rose-500/20 pb-4">
-                <h3 className="text-xl font-bold text-slate-900">
-                  The Ink Urban Guarantee
-                </h3>
-                <span className="text-xs font-bold text-rose-600 px-2.5 py-1 rounded bg-slate-100">
-                  Agency Standards
-                </span>
+          {/* Right Column: 3 Compact Guarantees */}
+          <div className="lg:col-span-6 space-y-3">
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start space-x-3 text-left">
+              <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Direct Senior Engineer Access</h3>
+                <p className="text-xs text-slate-600 mt-0.5">No junior account managers. You collaborate directly with senior full-stack architects.</p>
               </div>
+            </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Direct Access to Senior Builders</h4>
-                    <p className="text-xs text-slate-600">No account managers or lost communication layers. You work directly with technical strategists.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">100% Code Ownership</h4>
-                    <p className="text-xs text-slate-600">You retain 100% full legal ownership of your website source code, assets, and analytics.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900">Predictable Milestone Pricing</h4>
-                    <p className="text-xs text-slate-600">Transparent pricing with zero hidden fees or unexpected monthly maintenance traps.</p>
-                  </div>
-                </div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start space-x-3 text-left">
+              <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide">100% Source Code Ownership</h3>
+                <p className="text-xs text-slate-600 mt-0.5">You own 100% of the repository, Figma assets, and database schemas with zero vendor lock-in.</p>
               </div>
+            </div>
 
-              <div className="p-4 rounded-xl bg-slate-100 border border-slate-300 text-center space-y-1">
-                <div className="text-xs text-slate-500">Official Partnership Inquiries</div>
-                <div className="text-sm font-bold text-slate-900">inkurban.in@gmail.com</div>
+            <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-start space-x-3 text-left">
+              <ShieldCheckIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+              <div>
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide">Sub-0.5s Performance Guarantee</h3>
+                <p className="text-xs text-slate-600 mt-0.5">Every platform is tested and optimized for 99-100/100 Core Web Vitals on mobile and desktop.</p>
               </div>
-
             </div>
           </div>
 

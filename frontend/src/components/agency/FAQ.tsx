@@ -1,64 +1,65 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "How does working with Ink Urban compare to hiring a traditional local agency?",
-      answer: "Traditional agencies in major metropolitan hubs routinely charge $25,000 to $50,000+ for custom web builds due to expensive physical office overhead. Ink Urban delivers tier-1 international web architecture, sub-second speed, and conversion copywriting at a fraction of traditional agency retainers — with zero compromise on quality or time-zone communication."
+      question: "What tech stack does Ink Urban use?",
+      answer: "We engineer web platforms using Next.js 15, React 19, TypeScript, and Tailwind CSS. Backends and APIs run on scalable Spring Boot or Node.js with PostgreSQL on Cloudflare/Vercel edge networks. Zero WordPress or bloated templates."
     },
     {
-      question: "Why do you build custom web platforms instead of generic CMS templates?",
-      answer: "Generic CMS templates are heavily bloated with plugins, slow to load (costing you 50%+ of mobile visitors), and vulnerable to security hacks. Custom bespoke architecture loads in under 0.8 seconds worldwide, achieves 100/100 Core Web Vitals, and provides total flexibility for high-converting booking drawers and funnels."
+      question: "Why custom engineering instead of WordPress or Webflow?",
+      answer: "Generic page builders rely on dozens of fragile plugins that cause 4-6s load times, security vulnerabilities, and high mobile bounce rates. Custom Next.js code renders in sub-0.5s with 100/100 Core Web Vitals and full scalability."
     },
     {
-      question: "What is the typical turnaround time for a complete website rebuild & SEO setup?",
-      answer: "Our standard project timeline is 2 to 3 weeks. Week 1 is focused on audit teardown, messaging, and wireframe approvals; Week 2 on custom high-performance coding and integrations; Week 3 on SEO schema deployment, speed verification, and live launch."
+      question: "What does the complimentary 15-Point Website Audit include?",
+      answer: "Our senior developers record a 15-minute video teardown of your current website, analyzing Core Web Vitals, code debt, security exposures, and conversion friction to give you an objective modernization roadmap."
     },
     {
-      question: "How long does it take to see Local SEO & Google Map Pack ranking improvements?",
-      answer: "Local SEO optimizations (Google Business Profile entity tuning, local structured JSON-LD schemas, and postcode targeting) typically show noticeable rank movements in 30 to 60 days. High-intent competitive keyword positions scale over 3 to 6 months."
+      question: "What is the typical project timeline?",
+      answer: "Custom enterprise platforms typically launch in 2 to 3 weeks across our 4-stage sprint process. Complex SaaS web applications take 4 to 8 weeks with bi-weekly staging demos."
     },
     {
-      question: "What is required from our team during the project?",
-      answer: "We respect your time. We only require a 45-minute initial strategy onboarding call, any existing media/brand assets you have, and feedback on the initial design wireframe. We handle 100% of the technical execution, copywriting, speed tuning, and SEO setup."
-    },
-    {
-      question: "Do we get 100% full ownership of our code, domain, and assets?",
-      answer: "Yes, absolutely. Upon completion, 100% of the website source code, visual assets, analytics accounts, and hosting credentials belong entirely to your business. Zero lock-in contracts."
+      question: "Do we get 100% full source code ownership?",
+      answer: "Yes. Upon milestone completion, 100% of the GitHub repository, Figma design system, database schemas, and hosting configurations belong entirely to your company with zero lock-in."
     }
   ];
 
   return (
-    <section id="faq" className="py-12 sm:py-16 bg-white relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-14 sm:py-16 bg-white relative border-t border-slate-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
-            Everything You Need To <span className="brand-gradient-text-light">Know</span>
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-600 text-xs font-semibold uppercase tracking-wider">
+            <QuestionMarkCircleIcon className="w-3.5 h-3.5" />
+            <span>Frequently Asked Questions</span>
+          </div>
+
+          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate-900">
+            Frequently Asked <span className="brand-gradient-text-light">Questions</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            Clear, honest answers about our international workflow, technical stack, turnaround times, and pricing model.
+          <p className="text-slate-600 text-sm sm:text-base">
+            Clear, honest answers about our technical stack, turnaround times, and delivery standards.
           </p>
         </div>
 
-        {/* FAQ Accordion List */}
-        <div className="mt-16 space-y-4">
+        {/* Compact Accordion List */}
+        <div className="mt-8 space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             const answerId = `faq-answer-${idx}`;
             return (
               <div
                 key={idx}
-                className={`rounded-2xl transition-all duration-200 border ${
+                className={`rounded-xl transition-all border ${
                   isOpen
-                    ? 'bg-amber-50/80 border-amber-400/60 shadow-md'
-                    : 'bg-slate-50 border-slate-200 hover:border-amber-400/50'
+                    ? 'bg-rose-50/70 border-rose-400/60 shadow-sm'
+                    : 'bg-slate-50 border-slate-200 hover:border-rose-400/40'
                 }`}
               >
                 <button
@@ -66,15 +67,15 @@ export const FAQ: React.FC = () => {
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between space-x-4 focus:outline-none group"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between space-x-4 focus:outline-none group cursor-pointer"
                 >
-                  <span className="font-semibold text-base sm:text-lg text-slate-900 group-hover:text-amber-700 transition-colors">
+                  <span className="font-semibold text-sm sm:text-base text-slate-900 group-hover:text-rose-600 transition-colors">
                     {faq.question}
                   </span>
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className={`w-5 h-5 text-amber-600 flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-amber-600' : 'group-hover:text-amber-600'
+                    className={`w-4 h-4 text-rose-600 flex-shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-rose-600' : 'group-hover:text-rose-600'
                     }`}
                   />
                 </button>
@@ -82,7 +83,7 @@ export const FAQ: React.FC = () => {
                 {isOpen && (
                   <div
                     id={answerId}
-                    className="px-6 pb-6 text-sm text-slate-700 leading-relaxed border-t border-slate-200 pt-4"
+                    className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-rose-200/60 pt-3"
                   >
                     {faq.answer}
                   </div>
@@ -92,10 +93,10 @@ export const FAQ: React.FC = () => {
           })}
         </div>
 
-        {/* Direct Email Support Prompt */}
-        <div className="mt-12 text-center text-xs text-slate-600">
-          Have a specific question not listed here? Email us directly at{' '}
-          <a href="mailto:inkurban.in@gmail.com" className="text-amber-700 hover:text-rose-600 font-semibold underline transition-colors">
+        {/* Email Support */}
+        <div className="mt-8 text-center text-xs text-slate-500">
+          Have another question? Contact us directly at{' '}
+          <a href="mailto:inkurban.in@gmail.com" className="text-rose-600 hover:text-rose-700 font-semibold underline">
             inkurban.in@gmail.com
           </a>
         </div>

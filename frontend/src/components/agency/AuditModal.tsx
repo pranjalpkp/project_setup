@@ -89,13 +89,13 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
             <div className="space-y-2">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider">
                 <VideoCameraIcon className="w-4 h-4" aria-hidden="true" />
-                <span>Free 15-Point Video Teardown</span>
+                <span>Free 15-Point Technical Teardown</span>
               </div>
               <h3 className="font-heading text-2xl font-bold text-slate-900">
-                Request Your Website & SEO Audit
+                Request Your Technical Website & Code Audit
               </h3>
               <p className="text-xs text-slate-600">
-                Receive a 15-minute screen recording video analyzing your mobile speed, conversion friction, and local Google Map Pack gaps.
+                Receive a 15-minute video teardown by a senior developer analyzing your Core Web Vitals, code debt, security, and conversion bottlenecks.
               </p>
             </div>
 

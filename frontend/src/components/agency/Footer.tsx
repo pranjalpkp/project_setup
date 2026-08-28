@@ -37,34 +37,34 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-[#05060A] text-slate-300 border-t border-slate-800/80 relative pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <footer className="bg-[#05060A] text-slate-300 border-t border-slate-800/80 relative pt-10 pb-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
         {/* Top Footer Call-To-Action Banner */}
-        <div className="p-5 sm:p-8 md:p-10 rounded-2xl glass-panel-dark-brand border border-rose-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-          <div className="space-y-2 text-center md:text-left">
-            <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-white">
-              Ready To Dominate Your Market <span className="brand-gradient-text">Globally?</span>
+        <div className="p-6 sm:p-8 rounded-2xl glass-panel-dark-brand border border-rose-500/30 flex flex-col md:flex-row items-center justify-between gap-5 shadow-2xl">
+          <div className="space-y-1.5 text-center md:text-left">
+            <h2 className="font-heading text-xl sm:text-2xl font-bold text-white">
+              Ready To Engineer Your Next-Gen <span className="brand-gradient-text">Web Platform?</span>
             </h2>
-            <p className="text-slate-200 text-xs sm:text-sm max-w-xl">
-              Schedule a 30-minute consultation or request a complimentary 15-point video website audit.
+            <p className="text-slate-300 text-xs sm:text-sm max-w-lg">
+              Schedule a 30-minute discovery call or request a complimentary 15-point website & code audit.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto flex-shrink-0">
             <button
               type="button"
               onClick={handleAudit}
-              className="w-full sm:w-auto text-center px-5 py-3 rounded-xl border border-amber-400/40 text-amber-200 font-semibold text-xs uppercase tracking-wider hover:bg-amber-400/10 hover:text-amber-300 cursor-pointer"
+              className="w-full sm:w-auto text-center px-4 py-2.5 rounded-xl border border-amber-400/40 text-amber-200 font-semibold text-xs uppercase tracking-wider hover:bg-amber-400/10 transition-all cursor-pointer"
             >
               Request Technical Audit
             </button>
             <button
               type="button"
               onClick={handleBooking}
-              className="w-full sm:w-auto text-center px-6 py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:shadow-amber-500/40 hover:scale-105 transition-all cursor-pointer"
+              className="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:scale-102 transition-all cursor-pointer"
             >
-              Schedule Strategy Call
+              Start Your Project
             </button>
           </div>
         </div>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Footer Navigation Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pt-6 text-left">
 
-          {/* Column 1: Brand Info & Global Practice Focus */}
+          {/* Column 1: Brand Info & Agency Practice */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center space-x-3">
               <a href="#" aria-label="Ink Urban LLP Home" className="logo-badge">
@@ -90,13 +90,13 @@ export const Footer: React.FC<FooterProps> = ({
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
-              Ink Urban LLP is a global web development and search engine optimization practice servicing client enterprises worldwide.
+              Ink Urban LLP is a bespoke web development and digital engineering agency architecting high-performance web platforms and custom SaaS applications for clients worldwide.
             </p>
 
             <div className="space-y-1.5 text-xs text-slate-200">
               <div className="flex items-center space-x-2">
-                <EnvelopeIcon className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
-                <a href="mailto:inkurban.in@gmail.com" className="hover:text-amber-300 font-semibold">
+                <EnvelopeIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
+                <a href="mailto:inkurban.in@gmail.com" className="hover:text-rose-300 font-semibold">
                   inkurban.in@gmail.com
                 </a>
               </div>
@@ -115,50 +115,41 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
 
-            {/* Global Practice Focus Badge (Replaces Connect With Ink Urban) */}
-            {/* <div className="pt-2">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
-                Global Practice Focus
-              </div>
-              <div className="inline-flex items-center space-x-2 px-3.5 py-2 rounded-xl bg-[#0F1322] border border-amber-500/30 text-amber-300 text-xs font-semibold shadow-md">
-                <span className="text-sm">🌍</span>
-                <span>Worldwide / Global Service</span>
-              </div>
-            </div> */}
-
           </div>
 
           {/* Column 2: Services Column */}
           <div className="lg:col-span-3 space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-300">
-              Services & Capabilities
+            <h3 className="text-xs font-bold uppercase tracking-wider text-rose-400">
+              Development Services
             </h3>
             <ul className="space-y-2 text-xs text-slate-300">
-              <li><Link href="/#services" className="hover:text-white transition-colors">Agentic AI & Multi-Agent Workflows</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Custom High-Performance Web Architecture</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Conversion Rate Optimization (CRO)</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Local & Global Map Pack SEO</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Sub-Second Infrastructure Speed</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Custom Web Apps & SaaS</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">High-Performance Enterprise Platforms</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">UI/UX Design Systems</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Full-Stack APIs & Cloud Edge</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Technical Website Auditing</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Agentic AI Workflows</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Agency & Overview Column */}
           <div className="lg:col-span-3 space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-300">
-              Agency & Overview
+            <h3 className="text-xs font-bold uppercase tracking-wider text-rose-400">
+              Agency & Process
             </h3>
             <ul className="space-y-2 text-xs text-slate-300">
               <li><Link href="/#about" className="hover:text-white transition-colors">About Ink Urban</Link></li>
-              <li><Link href="/#process" className="hover:text-white transition-colors">Proven 4-Step Process</Link></li>
+              <li><Link href="/#craftsmanship" className="hover:text-white transition-colors">Engineering Craftsmanship</Link></li>
+              <li><Link href="/#process" className="hover:text-white transition-colors">4-Stage Development Process</Link></li>
               <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies & Benchmarks</Link></li>
-              <li><Link href="/#audit-teardown" className="hover:text-white transition-colors">Interactive Website Audit</Link></li>
+              <li><Link href="/#audit-offer" className="hover:text-white transition-colors">Complimentary Website Audit</Link></li>
               <li><Link href="/#faq" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
             </ul>
           </div>
 
           {/* Column 4: Social Channels & Scroll Up */}
           <div className="lg:col-span-2 space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-300">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-rose-400">
               Social Channels
             </h3>
             <div className="flex flex-wrap items-center gap-2.5">
@@ -205,7 +196,7 @@ export const Footer: React.FC<FooterProps> = ({
                 type="button"
                 onClick={scrollToTop}
                 aria-label="Scroll back to top of page"
-                className="w-full p-2.5 rounded-xl bg-[#0F1322] border border-slate-800 text-slate-300 hover:text-amber-300 hover:border-amber-400/50 transition-all flex items-center justify-center space-x-2 text-xs"
+                className="w-full p-2.5 rounded-xl bg-[#0F1322] border border-slate-800 text-slate-300 hover:text-rose-300 hover:border-rose-400/50 transition-all flex items-center justify-center space-x-2 text-xs cursor-pointer"
               >
                 <span>Back To Top</span>
                 <ArrowUpIcon className="w-3.5 h-3.5" aria-hidden="true" />
@@ -218,17 +209,17 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 text-center sm:text-left">
           <div>
-            &copy; {new Date().getFullYear()} INK URBAN LLP (inkurban.in)
+            &copy; {new Date().getFullYear()} INK URBAN LLP (inkurban.in) • All Rights Reserved
           </div>
 
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6 flex-shrink-0">
-            <Link href="/privacy" className="hover:text-amber-300 transition-colors">
+            <Link href="/privacy" className="hover:text-rose-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-amber-300 transition-colors">
+            <Link href="/terms" className="hover:text-rose-300 transition-colors">
               Terms of Service
             </Link>
-            <Link href="/security" className="hover:text-amber-300 transition-colors">
+            <Link href="/security" className="hover:text-rose-300 transition-colors">
               Security Overview
             </Link>
           </div>

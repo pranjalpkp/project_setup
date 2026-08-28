@@ -53,7 +53,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
       } else {
         toast.success('Strategy Call Confirmed!');
       }
-    } catch (err) {
+    } catch {
       toast.success('Strategy Call Confirmed!');
     } finally {
       setIsSubmitting(false);
@@ -93,13 +93,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             <div className="space-y-2 text-left">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider">
                 <CalendarIcon className="w-4 h-4" aria-hidden="true" />
-                <span>30-Minute Growth Strategy Call</span>
+                <span>30-Minute Project Discovery Call</span>
               </div>
               <h3 className="font-heading text-2xl sm:text-3xl font-bold text-slate-900">
-                Schedule Your Private Discovery Session
+                Schedule Your Web Development Strategy Session
               </h3>
               <p className="text-xs text-slate-600">
-                Direct consultation with Ink Urban senior strategists. We will review your growth goals, key practice markets, and website requirements.
+                Direct consultation with Ink Urban senior architects. We will review your web platform requirements, custom features, timeline, and architectural roadmap.
               </p>
             </div>
 

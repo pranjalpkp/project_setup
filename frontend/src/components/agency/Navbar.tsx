@@ -48,27 +48,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav aria-label="Main Navigation" className={`hidden md:flex items-center space-x-6 text-xs tracking-wider uppercase font-bold ${isScrolled ? 'text-slate-800' : 'text-slate-200'
+          <nav aria-label="Main Navigation" className={`hidden lg:flex items-center space-x-6 text-xs tracking-wider uppercase font-bold ${isScrolled ? 'text-slate-800' : 'text-slate-200'
             }`}>
-            <a href="#audit-teardown" className="hover:text-amber-400 transition-colors">
-              Audit
-            </a>
-            <a href="#problems" className="hover:text-amber-400 transition-colors">
-              Solutions
-            </a>
-            <a href="#services" className="hover:text-amber-400 transition-colors">
+            <a href="#services" className="hover:text-rose-400 transition-colors">
               Services
             </a>
-            <a href="#industries" className="hover:text-amber-400 transition-colors">
-              Industries
+            <a href="#craftsmanship" className="hover:text-rose-400 transition-colors">
+              Engineering
             </a>
-            <a href="#process" className="hover:text-amber-400 transition-colors">
+            <a href="#process" className="hover:text-rose-400 transition-colors">
               Process
             </a>
-            <Link href="/case-studies" className="hover:text-amber-400 transition-colors">
+            <a href="#industries" className="hover:text-rose-400 transition-colors">
+              Industries
+            </a>
+            <Link href="/case-studies" className="hover:text-rose-400 transition-colors">
               Case Studies
             </Link>
-            <a href="#faq" className="hover:text-amber-400 transition-colors">
+            <a href="#audit-offer" className="hover:text-rose-400 transition-colors text-amber-300 font-extrabold flex items-center gap-1">
+              <span>Website Audit</span>
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">Free</span>
+            </a>
+            <a href="#faq" className="hover:text-rose-400 transition-colors">
               FAQ
             </a>
           </nav>
@@ -78,32 +79,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
             <button
               type="button"
               onClick={onOpenAuditModal}
-              className={`text-xs font-semibold px-4 py-2.5 rounded-xl border transition-all duration-300 ${isScrolled
+              className={`text-xs font-semibold px-3.5 py-2.5 rounded-xl border transition-all duration-300 cursor-pointer ${isScrolled
                   ? 'text-slate-800 border-slate-300 hover:border-rose-500 hover:bg-rose-500/10 hover:text-rose-600'
                   : 'text-slate-200 border-slate-700 hover:border-amber-400 hover:bg-amber-400/10 hover:text-amber-300'
                 }`}
             >
-              Website Audit
+              Request Free Audit
             </button>
 
             <button
               type="button"
               onClick={onOpenBookingModal}
-              className="relative inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl brand-gradient-bg text-white shadow-lg shadow-rose-500/25 hover:shadow-amber-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="relative inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-xl brand-gradient-bg text-white shadow-lg shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
               <CalendarIcon className="w-4 h-4 text-white" aria-hidden="true" />
-              <span>Book Consultation</span>
+              <span>Start Your Project</span>
             </button>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center space-x-2 md:hidden">
+          <div className="flex items-center space-x-2 lg:hidden">
             <button
               type="button"
               onClick={onOpenBookingModal}
               className="text-[11px] sm:text-xs font-bold px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg brand-gradient-bg text-white shadow-md shadow-rose-500/20 cursor-pointer"
             >
-              Book Call
+              Start Project
             </button>
 
             <button
@@ -129,54 +130,55 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#090C16]/98 border-b border-slate-800 px-4 pt-3 pb-6 space-y-4 shadow-2xl animate-fadeIn text-white">
+        <div className="lg:hidden bg-[#090C16]/98 border-b border-slate-800 px-4 pt-3 pb-6 space-y-4 shadow-2xl animate-fadeIn text-white">
           <nav aria-label="Mobile Navigation" className="flex flex-col space-y-3 text-xs tracking-wider uppercase font-bold text-slate-200">
-            <a
-              href="#audit-teardown"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
-            >
-              Audit
-            </a>
-            <a
-              href="#problems"
-              onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
-            >
-              Solutions
-            </a>
             <a
               href="#services"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
+              className="hover:text-rose-400 py-1 transition-colors"
             >
               Services
             </a>
             <a
-              href="#industries"
+              href="#craftsmanship"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
+              className="hover:text-rose-400 py-1 transition-colors"
             >
-              Industries
+              Engineering
             </a>
             <a
               href="#process"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
+              className="hover:text-rose-400 py-1 transition-colors"
             >
               Process
+            </a>
+            <a
+              href="#industries"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-rose-400 py-1 transition-colors"
+            >
+              Industries
             </a>
             <Link
               href="/case-studies"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
+              className="hover:text-rose-400 py-1 transition-colors"
             >
               Case Studies
             </Link>
             <a
+              href="#audit-offer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-rose-400 py-1 transition-colors text-amber-300 font-extrabold flex items-center justify-between"
+            >
+              <span>Website Audit</span>
+              <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">Free</span>
+            </a>
+            <a
               href="#faq"
               onClick={() => setMobileMenuOpen(false)}
-              className="hover:text-amber-300 py-1 transition-colors"
+              className="hover:text-rose-400 py-1 transition-colors"
             >
               FAQ
             </a>
@@ -189,7 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
                 setMobileMenuOpen(false);
                 onOpenAuditModal();
               }}
-              className="w-full text-center py-2.5 rounded-xl border border-slate-700 text-slate-200 font-semibold text-xs uppercase tracking-wider"
+              className="w-full text-center py-2.5 rounded-xl border border-amber-400/40 text-amber-300 font-semibold text-xs uppercase tracking-wider bg-amber-400/5 cursor-pointer"
             >
               Request Free Video Audit
             </button>
@@ -200,9 +202,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
                 setMobileMenuOpen(false);
                 onOpenBookingModal();
               }}
-              className="w-full text-center py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25"
+              className="w-full text-center py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 cursor-pointer"
             >
-              Schedule Strategy Call
+              Start Your Project
             </button>
           </div>
         </div>
