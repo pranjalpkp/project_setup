@@ -223,10 +223,10 @@ export const CaseStudyDetailView: React.FC<CaseStudyDetailViewProps> = ({ caseSt
         {/* Bottom CTA Card */}
         <section className="p-8 sm:p-12 rounded-3xl brand-gradient-bg text-white shadow-2xl text-center space-y-6">
           <h2 className="font-heading text-2xl sm:text-4xl font-black">
-            Ready to Replicate These Results for Your Practice?
+            Ready to Replicate These Results for Your Enterprise?
           </h2>
           <p className="text-white/90 text-sm sm:text-base max-w-2xl mx-auto">
-            Get an empirical 15-point video audit of your current site, or schedule a strategic briefing with our technical directors.
+            Get an empirical 15-point diagnostic video audit of your current software, funnels, and AI opportunities, or schedule a strategic briefing with our technical architects.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <button

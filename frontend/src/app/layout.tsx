@@ -22,77 +22,183 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#07080C',
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#07080C' },
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+  ],
+  colorScheme: 'dark light',
 };
 
 export const metadata: Metadata = {
-  title: 'Ink Urban | Bespoke Web Development & Digital Engineering Agency',
-  description: 'Ink Urban is a premier web development agency. We engineer custom web applications, SaaS platforms, and enterprise digital solutions — backed by deep technical website and performance auditing.',
-  icons: {
-    icon: '/images/ink_fav.png',
-    shortcut: '/images/ink_fav.png',
-    apple: '/images/ink_fav.png',
+  title: {
+    default: 'Ink Urban | Custom Software Development, Growth & Marketing, and AI & ML Automation Agency',
+    template: '%s | Ink Urban',
   },
+  description: 'Ink Urban is a premier digital engineering and growth innovation agency. We architect custom software and SaaS platforms, engineer high-converting marketing funnels, and deploy autonomous AI & Machine Learning automation systems worldwide.',
+  applicationName: 'Ink Urban',
+  referrer: 'origin-when-cross-origin',
   keywords: [
     'Ink Urban',
     'Ink Urban LLP',
     'inkurban.in',
-    'web development agency',
-    'custom web application development',
-    'SaaS development agency',
-    'Next.js web development',
-    'enterprise web platforms',
-    'website audit agency',
-    'performance engineering',
-    'UI/UX design systems'
+    'custom software development agency',
+    'growth marketing agency',
+    'AI automation agency',
+    'machine learning development agency',
+    'enterprise SaaS development',
+    'Next.js web development agency',
+    'full stack engineering',
+    'autonomous multi agent AI',
+    'conversion rate optimization agency',
+    'programmatic SEO agency',
+    'enterprise cloud architecture',
+    'UI UX design systems',
+    'Spring Boot microservices',
+    'predictive machine learning models',
+    'headless commerce agency'
   ],
-  authors: [{ name: 'Ink Urban LLP' }],
+  authors: [{ name: 'Ink Urban LLP', url: 'https://inkurban.in' }],
+  creator: 'Ink Urban LLP',
+  publisher: 'Ink Urban LLP',
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
   metadataBase: new URL('https://inkurban.in'),
   alternates: {
     canonical: 'https://inkurban.in',
+    languages: {
+      'en-US': 'https://inkurban.in',
+      'x-default': 'https://inkurban.in',
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/images/ink_fav.png', type: 'image/png' },
+    ],
+    shortcut: '/images/ink_fav.png',
+    apple: [
+      { url: '/images/ink_fav.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   openGraph: {
-    title: 'Ink Urban | Bespoke Web Development & Digital Engineering Agency',
-    description: 'We engineer custom web applications, high-performance web platforms, and provide deep technical website audits for growing enterprises.',
+    title: 'Ink Urban | Custom Software Development, Growth & Marketing, and AI & ML Automation Agency',
+    description: 'We engineer custom full-stack software, accelerate conversion & marketing growth, and deploy autonomous AI & Machine Learning systems for high-growth enterprises worldwide.',
     url: 'https://inkurban.in',
     siteName: 'Ink Urban LLP',
+    images: [
+      {
+        url: '/images/ink_logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Ink Urban LLP - Custom Software, Growth & AI/ML Automation Agency',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ink Urban | Bespoke Web Development & Engineering Agency',
-    description: 'Bespoke web applications, high-performance web platforms, and deep technical website auditing.',
+    title: 'Ink Urban | Custom Software, Growth & AI/ML Automation Agency',
+    description: 'Bespoke software engineering, high-converting growth funnels, and autonomous AI & Machine Learning pipelines.',
+    images: ['/images/ink_logo.png'],
+    creator: '@inkurban',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  category: 'technology',
 };
 
-const jsonLd = {
+const jsonLdOrganization = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   'name': 'Ink Urban LLP',
+  'alternateName': 'Ink Urban',
   'url': 'https://inkurban.in',
   'logo': 'https://inkurban.in/images/ink_logo.png',
+  'image': 'https://inkurban.in/images/ink_logo.png',
   'email': 'inkurban.in@gmail.com',
-  'description': 'Ink Urban LLP is a bespoke web development and digital engineering agency specializing in custom web applications, enterprise digital platforms, and technical website auditing.',
-  'areaServed': 'Worldwide',
-  'serviceType': [
-    'Custom Web Application Development',
-    'Enterprise Web Platform Engineering',
-    'SaaS & Dashboard Development',
-    'UI/UX Design Systems',
-    'Technical Website & Security Auditing',
-    'Conversion Rate Optimization & SEO'
-  ],
   'telephone': '+918340123740',
+  'description': 'Ink Urban LLP is an integrated digital innovation agency specializing in Custom Software Development, Growth & Performance Marketing, and AI & ML Automation.',
+  'areaServed': [
+    { '@type': 'Country', 'name': 'United States' },
+    { '@type': 'Country', 'name': 'United Kingdom' },
+    { '@type': 'Country', 'name': 'Canada' },
+    { '@type': 'Country', 'name': 'Australia' },
+    { '@type': 'Country', 'name': 'United Arab Emirates' },
+    { '@type': 'Country', 'name': 'India' },
+    { '@type': 'Country', 'name': 'Worldwide' }
+  ],
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'Core Agency Services',
+    'itemListElement': [
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Custom Software Development & SaaS Platforms',
+          'description': 'Full-stack web applications, multi-tenant SaaS platforms, cloud microservices, and bespoke REST/GraphQL APIs engineered with Next.js 15, Spring Boot, and PostgreSQL.'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'Growth Engineering, CRO & Performance Marketing',
+          'description': 'Scientific conversion rate optimization (CRO), high-converting UI/UX funnels, programmatic SEO engines, and full-funnel customer acquisition.'
+        }
+      },
+      {
+        '@type': 'Offer',
+        'itemOffered': {
+          '@type': 'Service',
+          'name': 'AI & Machine Learning Automation',
+          'description': 'Autonomous multi-agent workflow orchestration, custom predictive ML models, fine-tuned enterprise LLMs, and intelligent document extraction.'
+        }
+      }
+    ]
+  },
   'sameAs': [
     'https://www.linkedin.com/company/inkurban/',
     'https://www.instagram.com/inkurban.in'
   ],
   'priceRange': '$$$$',
+  'openingHoursSpecification': {
+    '@type': 'OpeningHoursSpecification',
+    'dayOfWeek': [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ],
+    'opens': '09:00',
+    'closes': '21:00'
+  }
+};
+
+const jsonLdWebSite = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  'name': 'Ink Urban LLP',
+  'url': 'https://inkurban.in',
+  'potentialAction': {
+    '@type': 'SearchAction',
+    'target': 'https://inkurban.in/?s={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  }
 };
 
 export default function RootLayout({
@@ -108,7 +214,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/ink_fav.png" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
         />
       </head>
       <body className={`${inter.variable} ${khand.variable} antialiased selection:bg-rose-500/30 selection:text-white font-sans`}>

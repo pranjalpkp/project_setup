@@ -4,8 +4,9 @@ import React from 'react';
 import Link from 'next/link';
 import { 
   MapPinIcon, 
-  ArrowRightIcon,
-  SparklesIcon
+  ArrowRightIcon, 
+  SparklesIcon,
+  ChartBarIcon
 } from '@heroicons/react/24/outline';
 import { caseStudiesData } from '@/data/caseStudiesData';
 
@@ -22,14 +23,14 @@ export const CaseStudies: React.FC<CaseStudiesProps> = () => {
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-400 text-xs font-bold uppercase tracking-wider">
             <SparklesIcon className="w-3.5 h-3.5" />
-            <span>Proven Engineering Track Record</span>
+            <span>Proven Agency Track Record</span>
           </div>
 
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white">
-            Real Builds. <span className="brand-gradient-text">Measurable Results.</span>
+            Real Builds. <span className="brand-gradient-text">Empirical Business Results.</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Verified performance outcomes from custom web applications and modernization sprints.
+            Verified performance outcomes from custom software platforms, full-funnel growth campaigns, and autonomous AI automation deployments.
           </p>
         </div>
 

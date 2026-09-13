@@ -44,10 +44,10 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="p-6 sm:p-8 rounded-2xl glass-panel-dark-brand border border-rose-500/30 flex flex-col md:flex-row items-center justify-between gap-5 shadow-2xl">
           <div className="space-y-1.5 text-center md:text-left">
             <h2 className="font-heading text-xl sm:text-2xl font-bold text-white">
-              Ready To Engineer Your Next-Gen <span className="brand-gradient-text">Web Platform?</span>
+              Ready To Engineer Custom Software, Scale Growth, or <span className="brand-gradient-text">Automate with AI?</span>
             </h2>
             <p className="text-slate-300 text-xs sm:text-sm max-w-lg">
-              Schedule a 30-minute discovery call or request a complimentary 15-point website & code audit.
+              Schedule a 30-minute discovery briefing or request a complimentary technical, growth & AI diagnostic audit.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export const Footer: React.FC<FooterProps> = ({
               onClick={handleAudit}
               className="w-full sm:w-auto text-center px-4 py-2.5 rounded-xl border border-amber-400/40 text-amber-200 font-semibold text-xs uppercase tracking-wider hover:bg-amber-400/10 transition-all cursor-pointer"
             >
-              Request Technical Audit
+              Request Free Audit
             </button>
             <button
               type="button"
@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Column 1: Brand Info & Agency Practice */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center space-x-3">
-              <a href="#" aria-label="Ink Urban LLP Home" className="logo-badge">
+              <Link href="/" aria-label="Ink Urban LLP Home" className="logo-badge">
                 <img
                   src="/images/ink_logo.png"
                   alt="Ink Urban LLP Logo"
@@ -86,11 +86,11 @@ export const Footer: React.FC<FooterProps> = ({
                 <span className="text-[10px] font-extrabold tracking-wider text-[#07080C] border border-[#07080C]/20 px-1.5 py-0.5 rounded bg-slate-100">
                   LLP
                 </span>
-              </a>
+              </Link>
             </div>
 
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
-              Ink Urban LLP is a bespoke web development and digital engineering agency architecting high-performance web platforms and custom SaaS applications for clients worldwide.
+              Ink Urban LLP is a full-cycle digital innovation agency architecting custom software, SaaS platforms, high-converting growth funnels, and autonomous AI & Machine Learning automations worldwide.
             </p>
 
             <div className="space-y-1.5 text-xs text-slate-200">
@@ -117,32 +117,32 @@ export const Footer: React.FC<FooterProps> = ({
 
           </div>
 
-          {/* Column 2: Services Column */}
+          {/* Column 2: Capabilities Column */}
           <div className="lg:col-span-3 space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-rose-400">
-              Development Services
+              Agency Capabilities
             </h3>
             <ul className="space-y-2 text-xs text-slate-300">
               <li><Link href="/#services" className="hover:text-white transition-colors">Custom Web Apps & SaaS</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">High-Performance Enterprise Platforms</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">UI/UX Design Systems</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Full-Stack APIs & Cloud Edge</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Technical Website Auditing</Link></li>
-              <li><Link href="/#services" className="hover:text-white transition-colors">Agentic AI Workflows</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Cloud Microservices & APIs</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">CRO & Funnel Optimization</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Programmatic SEO & Authority</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Autonomous Multi-Agent AI</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Predictive ML & Decision Models</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Agency & Overview Column */}
+          {/* Column 3: Agency & Process Column */}
           <div className="lg:col-span-3 space-y-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-rose-400">
               Agency & Process
             </h3>
             <ul className="space-y-2 text-xs text-slate-300">
               <li><Link href="/#about" className="hover:text-white transition-colors">About Ink Urban</Link></li>
-              <li><Link href="/#craftsmanship" className="hover:text-white transition-colors">Engineering Craftsmanship</Link></li>
-              <li><Link href="/#process" className="hover:text-white transition-colors">4-Stage Development Process</Link></li>
+              <li><Link href="/#craftsmanship" className="hover:text-white transition-colors">Integrated Engineering</Link></li>
+              <li><Link href="/#process" className="hover:text-white transition-colors">4-Stage Sprint Lifecycle</Link></li>
+              <li><Link href="/#industries" className="hover:text-white transition-colors">Industry Sectors</Link></li>
               <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies & Benchmarks</Link></li>
-              <li><Link href="/#audit-offer" className="hover:text-white transition-colors">Complimentary Website Audit</Link></li>
               <li><Link href="/#faq" className="hover:text-white transition-colors">Frequently Asked Questions</Link></li>
             </ul>
           </div>

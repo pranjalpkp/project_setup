@@ -19,7 +19,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
   const [websiteUrl, setWebsiteUrl] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [industry, setIndustry] = useState('medspa');
+  const [focusArea, setFocusArea] = useState('full-stack');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!isOpen) return null;
@@ -41,7 +41,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
           name,
           email,
           websiteUrl,
-          industry
+          industry: `Focus: ${focusArea}`
         })
       });
 
@@ -50,7 +50,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
       } else {
         toast.success('Audit request queued!');
       }
-    } catch (err) {
+    } catch {
       toast.success('Audit request queued successfully!');
     } finally {
       setIsSubmitting(false);
@@ -67,9 +67,9 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-md animate-fadeIn" role="dialog" aria-modal="true">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-md animate-fadeIn" role="dialog" aria-modal="true" aria-labelledby="audit-modal-title">
       <div 
-        className="relative w-full max-w-xl bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[90vh] overflow-y-auto brand-glow"
+        className="relative w-full max-w-xl bg-[#0B0E19] border border-rose-500/30 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[92vh] overflow-y-auto brand-glow text-white"
         onClick={(e) => e.stopPropagation()}
       >
         
@@ -77,8 +77,8 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
         <button
           type="button"
           onClick={handleClose}
-          aria-label="Close website audit modal"
-          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-1.5 sm:p-2 text-slate-600 hover:text-slate-900 rounded-xl bg-slate-100 border border-slate-300 z-10 cursor-pointer"
+          aria-label="Close diagnostic audit modal"
+          className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 text-slate-400 hover:text-white rounded-xl bg-[#121626] border border-slate-700 z-10 cursor-pointer min-h-[40px] min-w-[40px] flex items-center justify-center transition-colors"
         >
           <XMarkIcon className="w-5 h-5" aria-hidden="true" />
         </button>
@@ -87,21 +87,21 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
           <div className="space-y-6 text-left">
             
             <div className="space-y-2">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-600 text-xs font-bold uppercase tracking-wider">
-                <VideoCameraIcon className="w-4 h-4" aria-hidden="true" />
-                <span>Free 15-Point Technical Teardown</span>
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-bold uppercase tracking-wider">
+                <VideoCameraIcon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span>Complimentary 15-Point Diagnostic Audit</span>
               </div>
-              <h3 className="font-heading text-2xl font-bold text-slate-900">
-                Request Your Technical Website & Code Audit
+              <h3 id="audit-modal-title" className="font-heading text-2xl font-bold text-white">
+                Request Your Technical, Growth & AI Diagnostic Audit
               </h3>
-              <p className="text-xs text-slate-600">
-                Receive a 15-minute video teardown by a senior developer analyzing your Core Web Vitals, code debt, security, and conversion bottlenecks.
+              <p className="text-xs text-slate-300">
+                Receive a 15-minute video teardown by a senior engineer analyzing your software code debt, API latency, conversion leaks, and high-impact AI automation opportunities.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="audit-name" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                <label htmlFor="audit-name" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
                   Full Name *
                 </label>
                 <input
@@ -110,14 +110,14 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Marcus Vance"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-rose-500"
+                  placeholder="e.g. Elena Rostova"
+                  className="w-full px-4 py-3 sm:py-2.5 rounded-xl bg-[#101526] border border-slate-700 text-white placeholder-slate-500 text-base sm:text-xs focus:outline-none focus:border-rose-500 min-h-[44px]"
                 />
               </div>
 
               <div>
-                <label htmlFor="audit-website" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                  Website URL *
+                <label htmlFor="audit-website" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                  Website / Platform URL *
                 </label>
                 <input
                   id="audit-website"
@@ -126,12 +126,12 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                   value={websiteUrl}
                   onChange={(e) => setWebsiteUrl(e.target.value)}
                   placeholder="https://yourbusiness.com"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-rose-500"
+                  className="w-full px-4 py-3 sm:py-2.5 rounded-xl bg-[#101526] border border-slate-700 text-white placeholder-slate-500 text-base sm:text-xs focus:outline-none focus:border-rose-500 min-h-[44px]"
                 />
               </div>
 
               <div>
-                <label htmlFor="audit-email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                <label htmlFor="audit-email" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
                   Work Email *
                 </label>
                 <input
@@ -140,63 +140,62 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="marcus@vancelaw.com"
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-rose-500"
+                  placeholder="elena@enterprise.com"
+                  className="w-full px-4 py-3 sm:py-2.5 rounded-xl bg-[#101526] border border-slate-700 text-white placeholder-slate-500 text-base sm:text-xs focus:outline-none focus:border-rose-500 min-h-[44px]"
                 />
               </div>
 
               <div>
-                <label htmlFor="audit-industry" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                  Primary Niche
+                <label htmlFor="audit-focus" className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">
+                  Primary Area of Diagnostic Interest
                 </label>
                 <select
-                  id="audit-industry"
-                  value={industry}
-                  onChange={(e) => setIndustry(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:outline-none focus:border-rose-500"
+                  id="audit-focus"
+                  value={focusArea}
+                  onChange={(e) => setFocusArea(e.target.value)}
+                  className="w-full px-4 py-3 sm:py-2.5 rounded-xl bg-[#101526] border border-slate-700 text-white text-base sm:text-xs focus:outline-none focus:border-rose-500 font-medium min-h-[44px]"
                 >
-                  <option value="medspa">Med Spa / Aesthetic Clinic</option>
-                  <option value="dentist">Cosmetic Dentist</option>
-                  <option value="lawfirm">Law Firm / Legal Practice</option>
-                  <option value="hvac">HVAC / Roofing Contractor</option>
-                  <option value="other">Other High-Value Service</option>
+                  <option value="full-stack">Full-Stack Modernization (Code, Speed & Funnel)</option>
+                  <option value="software">Custom Software & Cloud API Architecture</option>
+                  <option value="growth">Conversion Rate Optimization (CRO) & Funnel Leaks</option>
+                  <option value="aiml">AI & Machine Learning Workflow Automation</option>
                 </select>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:scale-[1.01] transition-all flex items-center justify-center space-x-2"
+                className="w-full py-3.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:scale-[1.01] transition-all flex items-center justify-center space-x-2 min-h-[48px] cursor-pointer"
               >
-                <SparklesIcon className="w-4 h-4 text-white" aria-hidden="true" />
+                <SparklesIcon className="w-4 h-4 text-white flex-shrink-0" aria-hidden="true" />
                 <span>{isSubmitting ? 'Submitting Request...' : 'Send Me My Free Video Audit'}</span>
               </button>
             </form>
 
-            <div className="text-xs text-slate-500 text-center">
-              🔒 100% confidential. Delivered to your email within 24 hours.
+            <div className="text-xs text-slate-400 text-center">
+              🔒 100% confidential under standard agency NDA. Delivered to your email within 24 hours.
             </div>
 
           </div>
         ) : (
           <div className="space-y-6 text-center py-6">
-            <div className="w-16 h-16 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-500 flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center mx-auto">
               <CheckCircleIcon className="w-10 h-10" aria-hidden="true" />
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-heading text-2xl font-bold text-slate-900">
+              <h3 className="font-heading text-2xl font-bold text-white">
                 Audit Request Confirmed!
               </h3>
-              <p className="text-xs text-slate-600 max-w-md mx-auto">
-                Thank you, <strong>{name}</strong>. Our senior growth engineer is reviewing <strong>{websiteUrl}</strong>. Your custom Loom video teardown will arrive at <strong>{email}</strong> within 24 hours.
+              <p className="text-xs text-slate-300 max-w-md mx-auto">
+                Thank you, <strong>{name}</strong>. Our senior technical architect is reviewing <strong>{websiteUrl}</strong>. Your customized Loom video teardown will arrive at <strong>{email}</strong> within 24 hours.
               </p>
             </div>
 
             <button
               type="button"
               onClick={handleClose}
-              className="px-6 py-2.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider"
+              className="px-6 py-3 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider min-h-[44px] cursor-pointer"
             >
               Close Window
             </button>

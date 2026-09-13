@@ -3,8 +3,8 @@
 import React from 'react';
 import { 
   BoltIcon, 
-  SparklesIcon, 
   ArrowTrendingUpIcon, 
+  CpuChipIcon, 
   ShieldCheckIcon,
   CheckIcon
 } from '@heroicons/react/24/outline';
@@ -13,27 +13,27 @@ export const ProblemsWeSolve: React.FC = () => {
   const problems = [
     {
       icon: BoltIcon,
-      problem: "Slow Legacy Sites",
-      description: "WordPress/Wix pages taking 4+ seconds causing high bounce rates.",
-      solution: "Bespoke Next.js 15 & sub-0.5s page loads."
-    },
-    {
-      icon: SparklesIcon,
-      problem: "Brand Authority Disconnect",
-      description: "Premium enterprise services represented by cheap, generic templates.",
-      solution: "Editorial Figma design systems & luxury UI/UX."
+      problem: "Fragile Tech Debt & Slow Apps",
+      description: "Legacy codebases and bloated templates causing 3+ second latencies, database deadlocks, and costly maintenance.",
+      solution: "Bespoke Next.js 15 & Spring Boot microservices delivering sub-300ms global speeds."
     },
     {
       icon: ArrowTrendingUpIcon,
-      problem: "Low Visitor Conversion",
-      description: "High traffic landing on clunky 12-field forms nobody completes.",
-      solution: "Frictionless 2-click intake drawers & booking flows."
+      problem: "Leaky Funnels & Stagnant Growth",
+      description: "High acquisition spend landing on low-converting pages with clunky multi-step forms and high bounce rates.",
+      solution: "Scientific CRO funnels, frictionless 2-click intake drawers, and programmatic SEO engines."
+    },
+    {
+      icon: CpuChipIcon,
+      problem: "Costly Manual Operations",
+      description: "Teams spending hundreds of hours on repetitive document parsing, manual data validation, and customer triage.",
+      solution: "Autonomous multi-agent AI pipelines reducing manual operations by up to 85%."
     },
     {
       icon: ShieldCheckIcon,
-      problem: "Security Vulnerabilities",
-      description: "Outdated plugin CVEs, unvalidated inputs, and monthly locks.",
-      solution: "OWASP defense-in-depth & 100% code ownership."
+      problem: "Vendor Lock-In & Security Risks",
+      description: "Trapped in proprietary software builders with recurring monthly royalties and vulnerable third-party dependencies.",
+      solution: "100% source code ownership, zero vendor lock-in, and OWASP defense-in-depth security."
     }
   ];
 
@@ -48,10 +48,10 @@ export const ProblemsWeSolve: React.FC = () => {
           </div>
 
           <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white">
-            Built To Eliminate Digital Performance Friction
+            Built To Eliminate Engineering, Growth & Operational Friction
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            We replace technical debt with high-converting, scalable engineering.
+            We replace outdated systems and fragmented agencies with cohesive, high-performance execution.
           </p>
         </div>
 
@@ -62,19 +62,21 @@ export const ProblemsWeSolve: React.FC = () => {
             return (
               <div 
                 key={idx}
-                className="p-5 rounded-2xl glass-panel-dark border border-slate-800 hover:border-rose-500/40 transition-all duration-300 space-y-4 shadow-lg group"
+                className="p-5 rounded-2xl glass-panel-dark border border-slate-800 hover:border-rose-500/40 transition-all duration-300 space-y-4 shadow-lg group flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 group-hover:scale-105 transition-transform">
-                  <Icon className="w-5 h-5 flex-shrink-0" />
-                </div>
+                <div className="space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 group-hover:scale-105 transition-transform">
+                    <Icon className="w-5 h-5 flex-shrink-0" />
+                  </div>
 
-                <div className="space-y-1">
-                  <h3 className="text-base font-bold text-white group-hover:text-rose-300 transition-colors">
-                    {item.problem}
-                  </h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">
-                    {item.description}
-                  </p>
+                  <div className="space-y-1">
+                    <h3 className="text-base font-bold text-white group-hover:text-rose-300 transition-colors">
+                      {item.problem}
+                    </h3>
+                    <p className="text-xs text-slate-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
 
                 <div className="pt-3 border-t border-slate-800/80 flex items-start space-x-2 text-xs text-rose-300">
