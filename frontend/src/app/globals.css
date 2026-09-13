@@ -5,75 +5,88 @@
   --font-sans: var(--font-sans), 'Inter', sans-serif;
 }
 
-/* Global Typography & Font Family Assignment */
+/* Global Typography & Luxury Dark Canvas Assignment */
 body {
-  background-color: #07080C;
-  color: #F8FAFC;
+  background-color: #06070B;
+  color: #F1F5F9;
   font-family: var(--font-sans), 'Inter', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading), 'Khand', sans-serif !important;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.015em;
 }
 
-/* Glass Panels */
+/* Luxury Glassmorphism Surfaces */
+.glass-card-premium {
+  background: rgba(13, 17, 31, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-premium:hover {
+  border-color: rgba(244, 63, 94, 0.4);
+  box-shadow: 0 20px 45px rgba(244, 63, 94, 0.12), 0 0 20px rgba(244, 63, 94, 0.08);
+}
+
+.glass-panel-luxury {
+  background: linear-gradient(180deg, rgba(16, 20, 36, 0.88) 0%, rgba(10, 13, 24, 0.94) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(244, 63, 94, 0.1);
+}
+
 .glass-panel-dark {
-  background: rgba(15, 18, 28, 0.85);
+  background: rgba(12, 16, 28, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel-dark-brand {
-  background: rgba(22, 14, 22, 0.9);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(20, 14, 26, 0.92) 0%, rgba(12, 16, 28, 0.94) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(244, 63, 94, 0.35);
-  box-shadow: 0 10px 40px rgba(244, 63, 94, 0.15);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(244, 63, 94, 0.12);
 }
 
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-}
-
-.glass-panel-light-brand {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(244, 63, 94, 0.3);
-  box-shadow: 0 10px 35px rgba(244, 63, 94, 0.1);
-}
-
-/* Radiant Dark Hero Gradient Text */
+/* Radiant Luxury Gradient Typography */
 .brand-gradient-text {
-  background: linear-gradient(135deg, #FB7185 0%, #F43F5E 40%, #FBBF24 80%, #E5C378 100%);
+  background: linear-gradient(135deg, #FF6B8B 0%, #F43F5E 35%, #FBBF24 75%, #FDE68A 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
-/* Light Section Gradient Text */
 .brand-gradient-text-light {
-  background: linear-gradient(135deg, #E11D48 0%, #F43F5E 50%, #D97706 100%);
+  background: linear-gradient(135deg, #FB7185 0%, #F43F5E 45%, #F59E0B 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
-/* Logo white badge for maximum visibility of black text */
+.brand-gradient-purple-text {
+  background: linear-gradient(135deg, #C084FC 0%, #A855F7 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Logo White Badge */
 .logo-badge {
   background: #ffffff;
   padding: 6px 14px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 0 15px rgba(244, 63, 94, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(244, 63, 94, 0.2);
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -82,34 +95,51 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .logo-badge:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25), 0 0 20px rgba(244, 63, 94, 0.25);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 0 22px rgba(244, 63, 94, 0.35);
 }
 
+/* Luxury Gradient Backgrounds & Buttons */
 .brand-gradient-bg {
-  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 60%, #BE123C 100%);
+  background: linear-gradient(135deg, #F43F5E 0%, #E11D48 50%, #BE123C 100%);
+  box-shadow: 0 8px 25px rgba(244, 63, 94, 0.35);
+}
+
+.brand-gradient-bg:hover {
+  box-shadow: 0 12px 35px rgba(244, 63, 94, 0.5);
 }
 
 .gold-gradient-bg {
-  background: linear-gradient(135deg, #E5C378 0%, #D4AF37 50%, #997312 100%);
+  background: linear-gradient(135deg, #F59E0B 0%, #D4AF37 50%, #B45309 100%);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
 }
 
+.purple-gradient-bg {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 50%, #4F46E5 100%);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+}
+
+/* Ambient Glows */
 .brand-glow {
-  box-shadow: 0 0 35px -5px rgba(244, 63, 94, 0.25);
+  box-shadow: 0 0 45px -5px rgba(244, 63, 94, 0.3);
 }
 
 .gold-glow {
-  box-shadow: 0 0 35px -5px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 45px -5px rgba(212, 175, 55, 0.25);
 }
 
 .bg-grid-pattern {
-  background-size: 40px 40px;
+  background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-gradient-dark {
-  background: radial-gradient(circle at 50% 0%, rgba(244, 63, 94, 0.15) 0%, rgba(212, 175, 55, 0.08) 50%, transparent 80%);
+  background: radial-gradient(circle at 50% -10%, rgba(244, 63, 94, 0.16) 0%, rgba(139, 92, 246, 0.08) 35%, rgba(6, 7, 11, 0.95) 75%);
+}
+
+.bg-radial-section {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.06) 0%, rgba(6, 7, 11, 1) 70%);
 }
 
 /* Custom Scrollbar */
@@ -117,30 +147,45 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #07080c;
+  background: #06070B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e2433;
+  background: #191E2E;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #f43f5e;
+  background: #F43F5E;
 }
 
-/* Infographic Pipeline Flow Animations */
-@keyframes pipelineFlow {
-  0% {
-    background-position: 0% 50%;
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
   }
-  100% {
-    background-position: 200% 50%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-pipeline-flow {
-  background: linear-gradient(90deg, #F43F5E 0%, #FB7185 25%, #F59E0B 50%, #FB7185 75%, #F43F5E 100%);
-  background-size: 200% 100%;
-  animation: pipelineFlow 3s linear infinite;
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes pulseGlow {
@@ -154,5 +199,51 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 .animate-pulse-glow {
   animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 7s ease-in-out 2s infinite;
+}
+
+@keyframes laserDash {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-laser-line {
+  stroke-dasharray: 8 12;
+  animation: laserDash 3s linear infinite;
+}
+
+@keyframes cyberPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+.animate-cyber-pulse {
+  animation: cyberPulse 4s ease-in-out infinite;
 }
 

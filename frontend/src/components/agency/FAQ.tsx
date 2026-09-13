@@ -1,80 +1,108 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      question: "How does working with Ink Urban compare to hiring a traditional local agency?",
-      answer: "Traditional agencies in major metropolitan hubs routinely charge $25,000 to $50,000+ for custom web builds due to expensive physical office overhead. Ink Urban delivers tier-1 international web architecture, sub-second speed, and conversion copywriting at a fraction of traditional agency retainers — with zero compromise on quality or time-zone communication."
+      question: "What core capabilities does Ink Urban provide?",
+      answer: "Ink Urban operates across three integrated pillars: 1) Custom Software Development (Next.js 15, React 19, Spring Boot, PostgreSQL, Cloudflare Edge microservices), 2) Growth & Performance Marketing (Conversion Rate Optimization, high-converting UI/UX, programmatic SEO, and full-funnel acquisition), and 3) AI & ML Automation (autonomous multi-agent workflows, custom predictive models, and enterprise LLM applications)."
     },
     {
-      question: "Why do you build custom web platforms instead of generic CMS templates?",
-      answer: "Generic CMS templates are heavily bloated with plugins, slow to load (costing you 50%+ of mobile visitors), and vulnerable to security hacks. Custom bespoke architecture loads in under 0.8 seconds worldwide, achieves 100/100 Core Web Vitals, and provides total flexibility for high-converting booking drawers and funnels."
+      question: "Why choose custom engineering and growth systems over generic templates?",
+      answer: "Generic page builders and template plugins cause 3-5s load times, severe mobile bounce rates, security CVE vulnerabilities, and inflexible data models. Ink Urban engineers bespoke, sub-300ms platforms with 99-100 Core Web Vitals, high-converting UX funnels, and enterprise scalability with zero plugin bloat."
     },
     {
-      question: "What is the typical turnaround time for a complete website rebuild & SEO setup?",
-      answer: "Our standard project timeline is 2 to 3 weeks. Week 1 is focused on audit teardown, messaging, and wireframe approvals; Week 2 on custom high-performance coding and integrations; Week 3 on SEO schema deployment, speed verification, and live launch."
+      question: "What kind of AI & Machine Learning solutions do you build?",
+      answer: "We go far beyond basic chatbots. We architect autonomous multi-agent orchestration systems that automate complex multi-step workflows, train custom predictive ML models for churn, pricing, and anomaly detection, and deploy secure enterprise LLM copilots with domain-adapted fine-tuning and document intelligence."
     },
     {
-      question: "How long does it take to see Local SEO & Google Map Pack ranking improvements?",
-      answer: "Local SEO optimizations (Google Business Profile entity tuning, local structured JSON-LD schemas, and postcode targeting) typically show noticeable rank movements in 30 to 60 days. High-intent competitive keyword positions scale over 3 to 6 months."
+      question: "What does the complimentary Technical, Growth & AI Audit include?",
+      answer: "A senior principal engineer records a personalized 15-minute video teardown evaluating your current software architecture, API latency, conversion funnel drop-offs, and high-ROI opportunities for AI & ML workflow automation."
     },
     {
-      question: "What is required from our team during the project?",
-      answer: "We respect your time. We only require a 45-minute initial strategy onboarding call, any existing media/brand assets you have, and feedback on the initial design wireframe. We handle 100% of the technical execution, copywriting, speed tuning, and SEO setup."
+      question: "What is the typical project timeline and delivery cadence?",
+      answer: "Growth funnels and modern web applications typically launch in 2 to 3 weeks across our 4-stage sprint process. Complex SaaS platforms, mobile applications, and enterprise AI automation pipelines take 4 to 8 weeks with bi-weekly staging demos and continuous CI/CD deployments."
     },
     {
-      question: "Do we get 100% full ownership of our code, domain, and assets?",
-      answer: "Yes, absolutely. Upon completion, 100% of the website source code, visual assets, analytics accounts, and hosting credentials belong entirely to your business. Zero lock-in contracts."
+      question: "Do we retain 100% full intellectual property and source code ownership?",
+      answer: "Yes, 100%. Upon milestone completion, all GitHub repositories, Figma design systems, database schemas, trained ML model checkpoints, and cloud deployment pipelines belong exclusively to your company with zero vendor lock-in or recurring agency royalties."
     }
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': faqs.map((faq) => ({
+      '@type': 'Question',
+      'name': faq.question,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.answer
+      }
+    }))
+  };
+
   return (
-    <section id="faq" className="py-12 sm:py-16 bg-white relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" aria-labelledby="faq-heading" className="py-14 sm:py-16 bg-[#06070B] relative border-t border-slate-800">
+      {/* Schema.org FAQPage Structured Data for Rich Search Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
-            Everything You Need To <span className="brand-gradient-text-light">Know</span>
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-400 text-xs font-semibold uppercase tracking-wider">
+            <QuestionMarkCircleIcon className="w-3.5 h-3.5" aria-hidden="true" />
+            <span>Frequently Asked Questions</span>
+          </div>
+
+          <h2 id="faq-heading" className="font-heading text-3xl sm:text-4xl font-bold text-white">
+            Frequently Asked <span className="brand-gradient-text">Questions</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            Clear, honest answers about our international workflow, technical stack, turnaround times, and pricing model.
+          <p className="text-slate-400 text-sm sm:text-base">
+            Clear, honest answers about our technical stack, growth methodologies, AI capabilities, and delivery standards.
           </p>
         </div>
 
-        {/* FAQ Accordion List */}
-        <div className="mt-16 space-y-4">
+        {/* Compact Accordion List */}
+        <div className="mt-8 space-y-3" role="region" aria-label="FAQ Accordion">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             const answerId = `faq-answer-${idx}`;
+            const buttonId = `faq-btn-${idx}`;
             return (
               <div
                 key={idx}
-                className={`rounded-2xl transition-all duration-200 border ${
+                className={`rounded-xl transition-all border ${
                   isOpen
-                    ? 'bg-amber-50/80 border-amber-400/60 shadow-md'
-                    : 'bg-slate-50 border-slate-200 hover:border-amber-400/50'
+                    ? 'bg-[#101526] border-rose-500/50 shadow-lg'
+                    : 'bg-[#0B0E19] border-slate-800 hover:border-rose-500/40'
                 }`}
               >
                 <button
+                  id={buttonId}
                   type="button"
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between space-x-4 focus:outline-none group"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between space-x-4 focus:outline-none group cursor-pointer min-h-[48px]"
                 >
-                  <span className="font-semibold text-base sm:text-lg text-slate-900 group-hover:text-amber-700 transition-colors">
+                  <span className={`font-semibold text-sm sm:text-base transition-colors ${
+                    isOpen ? 'text-rose-300 font-bold' : 'text-slate-200 group-hover:text-rose-300'
+                  }`}>
                     {faq.question}
                   </span>
                   <ChevronDownIcon
                     aria-hidden="true"
-                    className={`w-5 h-5 text-amber-600 flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-amber-600' : 'group-hover:text-amber-600'
+                    className={`w-4 h-4 text-rose-400 flex-shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-rose-400' : 'group-hover:text-rose-300'
                     }`}
                   />
                 </button>
@@ -82,7 +110,9 @@ export const FAQ: React.FC = () => {
                 {isOpen && (
                   <div
                     id={answerId}
-                    className="px-6 pb-6 text-sm text-slate-700 leading-relaxed border-t border-slate-200 pt-4"
+                    role="region"
+                    aria-labelledby={buttonId}
+                    className="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-rose-500/20 pt-3"
                   >
                     {faq.answer}
                   </div>
@@ -92,10 +122,10 @@ export const FAQ: React.FC = () => {
           })}
         </div>
 
-        {/* Direct Email Support Prompt */}
-        <div className="mt-12 text-center text-xs text-slate-600">
-          Have a specific question not listed here? Email us directly at{' '}
-          <a href="mailto:inkurban.in@gmail.com" className="text-amber-700 hover:text-rose-600 font-semibold underline transition-colors">
+        {/* Email Support */}
+        <div className="mt-8 text-center text-xs text-slate-400">
+          Have a custom technical inquiry or specific architecture question? Contact our team directly at{' '}
+          <a href="mailto:inkurban.in@gmail.com" className="text-rose-400 hover:text-rose-300 font-semibold underline min-h-[44px] inline-flex items-center">
             inkurban.in@gmail.com
           </a>
         </div>

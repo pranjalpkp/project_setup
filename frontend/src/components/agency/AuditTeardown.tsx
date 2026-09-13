@@ -1,13 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-  XCircleIcon, 
-  CheckCircleIcon, 
-  ExclamationTriangleIcon, 
-  VideoCameraIcon, 
+  SparklesIcon,
+  BoltIcon,
+  ShieldCheckIcon,
+  CpuChipIcon,
   ArrowRightIcon,
-  SparklesIcon
+  CheckCircleIcon,
+  XCircleIcon
 } from '@heroicons/react/24/outline';
 
 interface AuditTeardownProps {
@@ -15,232 +16,160 @@ interface AuditTeardownProps {
 }
 
 export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }) => {
-  const [activeTab, setActiveTab] = useState<'conversion' | 'speed' | 'seo'>('conversion');
-
   return (
-    <section id="audit-teardown" className="py-12 sm:py-16 bg-slate-50 relative border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="craftsmanship" 
+      aria-labelledby="craftsmanship-heading"
+      className="py-16 sm:py-20 bg-[#07090F] relative border-t border-slate-800"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-4xl sm:max-w-5xl mx-auto space-y-4">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight max-w-4xl sm:max-w-5xl mx-auto">
-            Bridging the Gap Between <br className="hidden sm:inline" />
-            <span className="brand-gradient-text-light">Design & Conversion Performance</span>
-          </h2>
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider shadow-lg">
+            <SparklesIcon className="w-3.5 h-3.5 text-amber-400" aria-hidden="true" />
+            <span>Engineering Standards & Reliability</span>
+          </div>
 
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-            Many service provider websites underperform due to slow page loads, unclear messaging, or lack of local search optimization. Compare traditional web design limitations with custom conversion engineering.
+          <h2 id="craftsmanship-heading" className="font-heading text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Built for Velocity, <span className="brand-gradient-text">Security & High Conversion</span>
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+            Why leading businesses partner with Ink Urban instead of struggling with slow legacy agencies or fragile template builders.
           </p>
         </div>
 
-        {/* Interactive Feature Switcher */}
-        <div className="mt-8 sm:mt-12 flex justify-center w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-3 w-full sm:w-auto p-1 sm:p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300 gap-1.5 sm:space-x-2 sm:gap-0">
-            <button
-              type="button"
-              onClick={() => setActiveTab('conversion')}
-              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${
-                activeTab === 'conversion'
-                  ? 'brand-gradient-bg text-white shadow-lg shadow-rose-500/25'
-                  : 'text-slate-700 hover:text-slate-900 bg-white/40 sm:bg-transparent'
-              }`}
-            >
-              Conversion Architecture
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab('speed')}
-              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${
-                activeTab === 'speed'
-                  ? 'brand-gradient-bg text-white shadow-lg shadow-rose-500/25'
-                  : 'text-slate-700 hover:text-slate-900 bg-white/40 sm:bg-transparent'
-              }`}
-            >
-              Speed & Core Vitals
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab('seo')}
-              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${
-                activeTab === 'seo'
-                  ? 'brand-gradient-bg text-white shadow-lg shadow-rose-500/25'
-                  : 'text-slate-700 hover:text-slate-900 bg-white/40 sm:bg-transparent'
-              }`}
-            >
-              Local SEO Engine
-            </button>
-          </div>
-        </div>
-
-        {/* Comparison Grid */}
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Visual Performance Benchmark Lab Grid */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
-          {/* Typical Generic Site (The Problem) */}
-          <div className="p-5 sm:p-8 rounded-2xl bg-red-50/80 border border-red-300 space-y-6 relative overflow-hidden shadow-md">
-            <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl bg-red-500/10 border-b border-l border-red-500/30 text-red-600 text-xs font-bold uppercase tracking-wider">
-              Typical Freelancer / Template Site
+          {/* Card 1: 4 Lighthouse 100 Score Gauges with 3D Diagnostic Core */}
+          <div className="lg:col-span-5 p-5 sm:p-7 rounded-3xl bg-[#090C16] border border-rose-500/30 shadow-2xl flex flex-col justify-between space-y-5 group">
+            <div className="space-y-3">
+              <div className="relative h-36 rounded-2xl overflow-hidden border border-emerald-500/20">
+                <img
+                  src="/images/diagnostic_speed_core.jpg"
+                  alt="High Performance Architecture Diagnostic by Ink Urban"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#090C16] via-transparent to-black/40"></div>
+                <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-lg bg-[#090C16]/85 border border-emerald-500/30 backdrop-blur-md text-[10px] font-mono text-emerald-300 font-bold flex items-center space-x-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>100/100 Lighthouse Vitals</span>
+                </div>
+                <span className="absolute bottom-2.5 left-2.5 right-2.5 text-[11px] font-bold text-white drop-shadow-md">
+                  Clean Modular Architecture Standards
+                </span>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold text-white">100/100 Core Web Vitals Standard</h3>
+                <p className="text-xs text-slate-400 mt-0.5">Sub-second page load times, 0.00 CLS zero layout shifts, and instant server-side hydration.</p>
+              </div>
             </div>
 
-            <div className="flex items-center space-x-3 text-red-600">
-              <ExclamationTriangleIcon className="w-7 h-7 flex-shrink-0" />
-              <h3 className="text-xl font-bold text-slate-900">High Bounce Rate & Lost Revenue</h3>
+            {/* 4 Visual Circular Gauges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+              {[
+                { label: 'Performance', score: '100' },
+                { label: 'Accessibility', score: '100' },
+                { label: 'Best Practices', score: '100' },
+                { label: 'SEO Authority', score: '100' }
+              ].map((gauge, idx) => (
+                <div key={idx} className="p-2.5 rounded-2xl bg-[#0F1426] border border-emerald-500/30 space-y-1 flex flex-col items-center">
+                  <div className="w-10 h-10 rounded-full border-2 border-emerald-400 flex items-center justify-center font-heading font-extrabold text-base text-emerald-400 bg-emerald-500/10 shadow-lg shadow-emerald-500/20">
+                    {gauge.score}
+                  </div>
+                  <span className="text-[9px] font-bold text-slate-300 uppercase">{gauge.label}</span>
+                </div>
+              ))}
             </div>
 
-            {activeTab === 'conversion' && (
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Vague Headline:</strong> &quot;Welcome to our clinic / law firm&quot; with zero outcome offer.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Friction-Filled Booking:</strong> Long 12-field static contact forms nobody wants to fill.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>No Social Proof:</strong> Missing case studies, clear outcome metrics, or verified trust badges.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Mobile Breakdown:</strong> Cluttered layout that looks broken on iPhone & Android screens.</span>
-                </li>
-              </ul>
-            )}
-
-            {activeTab === 'speed' && (
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>PageSpeed Score: 32/100:</strong> Heavy uncompressed images & bloated WordPress plugins.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>4.8 Second Load Time:</strong> 53% of mobile visitors leave before the header renders.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Unstable Layout Shifts:</strong> Content jumps around while loading, frustrating users.</span>
-                </li>
-              </ul>
-            )}
-
-            {activeTab === 'seo' && (
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Generic Keywords:</strong> Optimized for non-converting high-volume national terms.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Missing Schema Markup:</strong> Google cannot read your service locations or reviews.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <XCircleIcon className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Zero Local Map Pack Strategy:</strong> Invisible when local high-ticket clients search on mobile.</span>
-                </li>
-              </ul>
-            )}
-
-            <div className="p-4 rounded-xl bg-red-100 border border-red-300 text-xs text-red-800">
-              <strong>Estimated Result:</strong> Under 1.2% visitor-to-lead conversion rate. Ad spend burned unnecessarily.
+            <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <span className="flex items-center space-x-1.5">
+                <CheckCircleIcon className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span className="truncate">Sub-0.4s Largest Contentful Paint</span>
+              </span>
+              <span className="font-mono text-slate-500 flex-shrink-0">0.00 CLS</span>
             </div>
           </div>
 
-          {/* Ink Urban Engineered Website (The Solution) */}
-          <div className="p-5 sm:p-8 rounded-2xl glass-panel-light-brand space-y-6 relative overflow-hidden shadow-xl brand-glow border border-rose-300">
-            <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-xl bg-rose-500/20 border-b border-l border-rose-500/40 text-rose-700 text-xs font-bold uppercase tracking-wider">
-              Ink Urban Growth Engine
+          {/* Card 2: Interactive Latency Visualizer */}
+          <div className="lg:col-span-7 p-5 sm:p-7 rounded-3xl bg-[#090C16] border border-slate-800 shadow-2xl flex flex-col justify-between space-y-5">
+            <div className="flex items-center justify-between">
+              <div className="space-y-1">
+                <span className="text-[11px] font-mono text-amber-400 font-bold uppercase tracking-wider">
+                  Architecture & Speed Benchmark
+                </span>
+                <h3 className="text-xl font-bold text-white">Custom Engineering vs. Legacy Fragility</h3>
+              </div>
+              <span className="text-xs px-2.5 py-1 rounded-md bg-[#121626] border border-slate-700 text-slate-300 font-mono">
+                P99 Latency
+              </span>
             </div>
 
-            <div className="flex items-center space-x-3 text-rose-600">
-              <SparklesIcon className="w-7 h-7 flex-shrink-0" />
-              <h3 className="text-xl font-bold text-slate-900">High-Converting Revenue Engine</h3>
+            {/* Visual Bar Comparison */}
+            <div className="space-y-4">
+              {/* Legacy Bar */}
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-red-400 flex items-center space-x-1.5">
+                    <XCircleIcon className="w-4 h-4 text-red-400" />
+                    <span>Bloated Plugins & Unoptimized Monoliths</span>
+                  </span>
+                  <span className="font-mono font-bold text-red-400">3,800ms (High Churn)</span>
+                </div>
+                <div className="w-full h-3 rounded-full bg-[#18111A] overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-red-600 to-rose-600 rounded-full w-[90%]"></div>
+                </div>
+              </div>
+
+              {/* Ink Urban Edge Bar */}
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-emerald-400 flex items-center space-x-1.5">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-400" />
+                    <span>Ink Urban High-Performance Architecture</span>
+                  </span>
+                  <span className="font-mono font-bold text-emerald-400">240ms (Instant Global)</span>
+                </div>
+                <div className="w-full h-3 rounded-full bg-[#0D1E18] overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full w-[12%] animate-pulse"></div>
+                </div>
+              </div>
             </div>
 
-            {activeTab === 'conversion' && (
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Outcome-Focused Hook:</strong> Instantly states the exact transformation your clinic / firm delivers.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Micro-Friction Booking Drawers:</strong> 2-click strategy scheduling with real-time availability.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Empirical Social Proof:</strong> Verified case breakdowns and metric-backed client outcomes.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Responsive Touch Optimization:</strong> Ultra-smooth mobile navigation tailored for mobile conversion.</span>
-                </li>
-              </ul>
-            )}
-
-            {activeTab === 'speed' && (
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>PageSpeed Score: 98-100/100:</strong> Built with clean modular architecture and edge server rendering.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Under 0.8s Load Time:</strong> Instantaneous rendering keeps 100% of high-intent visitors engaged.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Zero Layout Shifts (CLS 0.00):</strong> Rock-solid performance across all mobile devices.</span>
-                </li>
-              </ul>
-            )}
-
-            {activeTab === 'seo' && (
-              <ul className="space-y-4 text-sm text-slate-700">
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>High-Intent Buyer Keywords:</strong> Target ready-to-buy clients in specific affluent postcodes.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Structured Entity Schema:</strong> Direct Google Knowledge Graph integration & Local Pack optimization.</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircleIcon className="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
-                  <span><strong>Top 3 Map Pack Domination:</strong> Capture high-value phone calls and direct consultation bookings.</span>
-                </li>
-              </ul>
-            )}
-
-            <div className="p-4 rounded-xl bg-rose-50 border border-rose-300 text-xs text-rose-900">
-              <strong>Engineered Target:</strong> 3.5% to 6.8% lead conversion rate with 2.5x higher client lead quality.
+            {/* 3 Micro Feature Badges */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-xs">
+              <div className="p-2.5 rounded-xl bg-[#0D1222] border border-slate-800 text-slate-300 flex items-center space-x-2">
+                <ShieldCheckIcon className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                <span>Enterprise Security</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0D1222] border border-slate-800 text-slate-300 flex items-center space-x-2">
+                <CpuChipIcon className="w-4 h-4 text-amber-400 flex-shrink-0" />
+                <span>Autonomous AI Systems</span>
+              </div>
+              <div className="p-2.5 rounded-xl bg-[#0D1222] border border-slate-800 text-slate-300 flex items-center space-x-2">
+                <BoltIcon className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>100% Code Ownership</span>
+              </div>
             </div>
+
           </div>
 
         </div>
 
-        {/* Free Video Audit Banner */}
-        <div className="mt-12 sm:mt-16 p-5 sm:p-8 rounded-2xl bg-white border border-slate-300 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-          <div className="space-y-2 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start space-x-2 text-rose-600 text-xs font-bold uppercase tracking-wider">
-              <VideoCameraIcon className="w-4 h-4" />
-              <span>Complimentary Growth Offer</span>
-            </div>
-            <h4 className="text-lg sm:text-xl font-bold text-slate-900">
-              Want a 15-Point Video Teardown of Your Current Website?
-            </h4>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl">
-              We will record a personalized 15-minute video auditing your conversion leaks, speed bottlenecks, and local SEO gaps — 100% free with no obligation.
-            </p>
+        {/* Action Prompt Banner */}
+        <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-[#0D1120] border border-rose-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <div className="flex items-center space-x-2 text-center sm:text-left">
+            <span className="font-bold text-white">Want an independent technical review of your web platform, API response latency, and AI automation opportunities?</span>
           </div>
-
           <button
             type="button"
             onClick={onOpenAuditModal}
-            className="w-full sm:w-auto justify-center px-6 sm:px-7 py-3.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-500/25 hover:scale-105 transition-all flex items-center space-x-2 flex-shrink-0 cursor-pointer"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl brand-gradient-bg text-white font-bold uppercase tracking-wider text-xs shadow-md hover:scale-102 transition-all cursor-pointer whitespace-nowrap min-h-[40px] flex items-center justify-center space-x-1.5"
           >
-            <span>Request My Free Audit</span>
-            <ArrowRightIcon className="w-4 h-4 text-white" />
+            <span>Request Free Technical Audit</span>
+            <ArrowRightIcon className="w-3.5 h-3.5" />
           </button>
         </div>
 
@@ -248,3 +177,4 @@ export const AuditTeardown: React.FC<AuditTeardownProps> = ({ onOpenAuditModal }
     </section>
   );
 };
+

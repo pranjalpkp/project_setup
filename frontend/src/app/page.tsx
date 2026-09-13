@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Navbar } from '@/components/agency/Navbar';
 import { Hero } from '@/components/agency/Hero';
 import { AuditTeardown } from '@/components/agency/AuditTeardown';
-import { ProblemsWeSolve } from '@/components/agency/ProblemsWeSolve';
 import { Services } from '@/components/agency/Services';
 import { Industries } from '@/components/agency/Industries';
 import { Process } from '@/components/agency/Process';
@@ -21,38 +20,35 @@ export default function HomePage() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#07080C] text-slate-100 relative overflow-hidden font-sans selection:bg-[#D4AF37]/30 selection:text-white">
+    <main className="min-h-screen bg-[#06070B] text-slate-100 relative overflow-hidden font-sans selection:bg-rose-500/20 selection:text-white">
       {/* Sticky Global Navigation */}
       <Navbar 
         onOpenBookingModal={() => setIsBookingModalOpen(true)}
         onOpenAuditModal={() => setIsAuditModalOpen(true)}
       />
 
-      {/* Hero Section */}
+      {/* Hero with Live Interactive Agency Console */}
       <Hero 
         onOpenBookingModal={() => setIsBookingModalOpen(true)}
         onOpenAuditModal={() => setIsAuditModalOpen(true)}
       />
 
-      {/* Interactive Website Audit & Teardown Section */}
+      {/* Interactive Performance & Architecture Diagnostic Lab */}
       <AuditTeardown 
         onOpenAuditModal={() => setIsAuditModalOpen(true)}
       />
 
-      {/* Problems Ink Urban Solves */}
-      <ProblemsWeSolve />
-
-      {/* Services & Capabilities */}
+      {/* 3-Pillar Visual Bento Grid */}
       <Services 
         onOpenBookingModal={() => setIsBookingModalOpen(true)}
       />
 
-      {/* High-Ticket Target Industries */}
+      {/* Interactive Target Industries Dashboard */}
       <Industries 
         onOpenBookingModal={() => setIsBookingModalOpen(true)}
       />
 
-      {/* Proven 4-Step Process */}
+      {/* Visual Sprint Roadmap & Timeline */}
       <Process 
         onOpenBookingModal={() => setIsBookingModalOpen(true)}
       />
@@ -62,12 +58,12 @@ export default function HomePage() {
         onOpenBookingModal={() => setIsBookingModalOpen(true)}
       />
 
-      {/* Free Audit High-Converting Offer */}
+      {/* Free Audit Command Center Offer */}
       <FreeAuditOffer 
         onOpenAuditModal={() => setIsAuditModalOpen(true)}
       />
 
-      {/* About Ink Urban LLP */}
+      {/* About Senior Engineering Practice */}
       <AboutUs />
 
       {/* Frequently Asked Questions */}

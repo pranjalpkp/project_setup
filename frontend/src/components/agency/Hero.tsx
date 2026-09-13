@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ArrowRightIcon,
-  VideoCameraIcon,
-  GlobeAltIcon,
-  ShieldCheckIcon,
-  BoltIcon,
-  StarIcon,
-  SparklesIcon,
-  ArrowTrendingUpIcon
+  CpuChipIcon,
+  ArrowTrendingUpIcon,
+  DocumentMagnifyingGlassIcon,
+  CheckCircleIcon,
+  ServerStackIcon
 } from '@heroicons/react/24/outline';
 
 interface HeroProps {
@@ -18,269 +16,449 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBookingModal, onOpenAuditModal }) => {
-  const [activeTab, setActiveTab] = useState<'speed' | 'seo' | 'cro'>('speed');
+  const [activeTab, setActiveTab] = useState<'rag' | 'webdev' | 'seogrowth'>('rag');
+  const [simulatedPing, setSimulatedPing] = useState(24);
+  const [activeRagStep, setActiveRagStep] = useState(0);
+
+  // Live simulated ping and RAG pipeline step ticker
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSimulatedPing(Math.floor(Math.random() * 8) + 21);
+      setActiveRagStep((prev) => (prev + 1) % 6);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
+
+  const ragStages = [
+    { step: '01', name: 'Data Ingestion', desc: 'Securely connect company documents, databases & APIs' },
+    { step: '02', name: 'Private Indexing', desc: 'Enterprise-grade semantic embeddings & search indexing' },
+    { step: '03', name: 'Context Retrieval', desc: 'Hybrid lexical & dense search for precise source context' },
+    { step: '04', name: 'Fact Verification', desc: 'Anti-hallucination verification & source citation checks' },
+    { step: '05', name: 'AI Reasoning', desc: 'Fine-tuned LLM execution adapted to your domain rules' },
+    { step: '06', name: 'Action & Chat UI', desc: 'Instant responses across web, Slack, and internal tools' }
+  ];
+
+  const techBadges = [
+    'Custom Web & SaaS Apps', 'Enterprise AI & RAG', 'Spring Boot & Python APIs', 'Next.js & React 19', 'PostgreSQL & Redis', 'Programmatic SEO & CRO', '100% IP Transfer'
+  ];
 
   return (
-    <section className="relative min-h-[85vh] pt-24 pb-14 overflow-hidden flex items-center justify-center bg-[#07080C] bg-radial-gradient-dark">
-
-      {/* Ambient Grid & Rose-Gold Radial Glows */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-25 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-rose-500/20 via-amber-600/15 to-transparent blur-[160px] pointer-events-none rounded-full" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-
-        {/* Main Hero Header Stack */}
-        <div className="text-center max-w-4xl mx-auto space-y-8">
-
-          {/* Executive Social Proof Pill Bar */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-4 py-2 rounded-full bg-[#101422] border border-rose-500/30 text-xs font-semibold shadow-2xl">
-            <span className="flex items-center space-x-2 text-rose-300 font-bold">
-              <SparklesIcon className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
-              <span>Clutch-Recognized Enterprise Development & Agentic AI Practice</span>
-            </span>
-            <span className="text-slate-600 hidden sm:inline" aria-hidden="true">•</span>
-            <div className="flex items-center space-x-1 text-amber-300">
-              <StarIcon className="w-3.5 h-3.5 fill-amber-400 text-amber-400 flex-shrink-0" aria-hidden="true" />
-              <span className="font-bold text-white">4.9/5 Rating</span>
-            </div>
-            <span className="text-slate-600 hidden md:inline" aria-hidden="true">•</span>
-            <span className="hidden md:flex items-center space-x-1 text-slate-200 font-semibold">
-              <GlobeAltIcon className="w-3.5 h-3.5 text-rose-400 flex-shrink-0" aria-hidden="true" />
-              <span>Serving Clients Worldwide</span>
-            </span>
-          </div>
-
-          {/* High-Impact Executive Headline */}
-          <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.12] sm:leading-[1.08] tracking-tight">
-            Engineering Bespoke Web Platforms That <span className="brand-gradient-text">Turn Search Traffic Into Revenue.</span>
-          </h1>
-
-          {/* Subheading */}
-          <p className="text-slate-200 text-sm sm:text-lg md:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
-            Ink Urban architects high-converting web platforms and organic search dominance strategies for established legal practices, medical groups, and commercial enterprises.
-          </p>
-
-          {/* Call To Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-2 max-w-md sm:max-w-none mx-auto w-full">
-            <button
-              type="button"
-              onClick={onOpenBookingModal}
-              className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-rose-500/25 hover:shadow-rose-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
-            >
-              <span>Schedule Strategy Call</span>
-              <ArrowRightIcon className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform flex-shrink-0" aria-hidden="true" />
-            </button>
-
-            <button
-              type="button"
-              onClick={onOpenAuditModal}
-              className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-5 sm:px-7 py-3.5 sm:py-4 rounded-xl bg-[#0F1320] border border-rose-500/30 hover:border-rose-400 text-rose-200 font-semibold text-xs tracking-wider uppercase transition-all duration-200 hover:bg-[#1A1325] shadow-xl cursor-pointer"
-            >
-              <VideoCameraIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
-              <span>Request 5-Min Video Teardown</span>
-            </button>
-          </div>
-
-          {/* Guarantee Badges Bar */}
-          <div className="pt-6 sm:pt-8 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 text-center max-w-3xl mx-auto">
-            <div className="flex items-center justify-center space-x-2.5 p-2.5 sm:p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
-              <BoltIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="text-white">Sub-0.5s Speed:</strong> 100/100 Core Web Vitals</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2.5 p-2.5 sm:p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
-              <ShieldCheckIcon className="w-4 h-4 text-amber-400 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="text-white">100% Bespoke Code:</strong> Zero Vulnerability Templates</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2.5 p-2.5 sm:p-3 rounded-xl bg-[#0A0D18]/60 border border-slate-800/60 text-xs text-slate-200">
-              <ArrowTrendingUpIcon className="w-4 h-4 text-rose-400 flex-shrink-0" aria-hidden="true" />
-              <span><strong className="text-white">3.2x ROI Lift:</strong> High-Intent Funnels</span>
-            </div>
-          </div>
-
+    <section
+      aria-label="Agency Introduction"
+      className="relative pt-24 sm:pt-32 pb-16 overflow-hidden flex flex-col items-center justify-center bg-[#05070B]"
+    >
+      {/* 3D Master Infographic Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute inset-0">
+          <img
+            src="/images/hero_infographic_bg.jpg"
+            alt="Ink Urban Digital Engineering: Custom Software, Enterprise AI, and Growth Marketing"
+            className="w-full h-full object-cover object-center opacity-30 scale-105 filter blur-[0.5px] transition-opacity duration-1000"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#05070B]/90 via-[#05070B]/70 to-[#05070B]" />
+          <div className="absolute inset-0 bg-radial-section opacity-80" />
         </div>
 
-        {/* Interactive Performance Benchmark Dashboard */}
-        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto rounded-2xl sm:rounded-3xl glass-panel-dark-brand p-4 sm:p-6 md:p-8 shadow-2xl border border-rose-500/40">
+        {/* Animated Cybernetic Conduits */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-40 pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="laserCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#06B6D4" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.2" />
+            </linearGradient>
+            <linearGradient id="laserRose" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#F43F5E" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#FB923C" stopOpacity="0.2" />
+            </linearGradient>
+            <linearGradient id="laserGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#F59E0B" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#10B981" stopOpacity="0.2" />
+            </linearGradient>
+          </defs>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
-            <div className="space-y-1 text-center sm:text-left">
-              <h2 className="text-lg sm:text-xl font-bold text-white">
-                Empirical Performance Benchmarks
-              </h2>
-              <p className="text-xs text-slate-300">
-                Compare typical template sites vs. Ink Urban engineered architecture.
-              </p>
+          <path
+            d="M 50 300 Q 250 200 450 380 T 600 500"
+            fill="none"
+            stroke="url(#laserCyan)"
+            strokeWidth="1.5"
+            className="animate-laser-line"
+          />
+          <path
+            d="M 700 100 L 700 700"
+            fill="none"
+            stroke="url(#laserRose)"
+            strokeWidth="1.5"
+            className="animate-laser-line"
+          />
+          <path
+            d="M 1400 300 Q 1150 200 950 400 T 800 520"
+            fill="none"
+            stroke="url(#laserGold)"
+            strokeWidth="1.5"
+            className="animate-laser-line"
+          />
+        </svg>
+
+        <div className="absolute top-1/4 left-1/4 w-[380px] h-[380px] bg-cyan-500/15 blur-[140px] rounded-full animate-cyber-pulse" />
+        <div className="absolute top-1/3 right-1/4 w-[420px] h-[420px] bg-rose-500/20 blur-[150px] rounded-full animate-cyber-pulse" />
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[550px] h-[260px] bg-amber-500/15 blur-[130px] rounded-full" />
+      </div>
+
+      {/* Floating Value Proposition Badges */}
+      {/* <div className="hidden xl:block absolute top-28 left-8 z-10 animate-float-slow pointer-events-none">
+        <div className="p-3.5 rounded-2xl bg-[#090C16]/90 border border-cyan-500/30 backdrop-blur-xl shadow-2xl flex items-center space-x-3 text-left">
+          <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+            <CpuChipIcon className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="text-[10px] font-mono text-cyan-400 uppercase font-bold">Enterprise AI & RAG</div>
+            <div className="text-xs font-bold text-white">Private Knowledge & Automation</div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* <div className="hidden xl:block absolute top-28 right-8 z-10 animate-float-delayed pointer-events-none">
+        <div className="p-3.5 rounded-2xl bg-[#090C16]/90 border border-amber-500/30 backdrop-blur-xl shadow-2xl flex items-center space-x-3 text-left">
+          <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-300">
+            <ArrowTrendingUpIcon className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="text-[10px] font-mono text-amber-400 uppercase font-bold">Organic Search Growth</div>
+            <div className="text-xs font-bold text-white">High-Intent Traffic & Rankings</div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* <div className="hidden xl:block absolute bottom-24 left-10 z-10 animate-float-delayed pointer-events-none">
+        <div className="p-3.5 rounded-2xl bg-[#090C16]/90 border border-rose-500/30 backdrop-blur-xl shadow-2xl flex items-center space-x-3 text-left">
+          <div className="w-9 h-9 rounded-xl bg-rose-500/20 border border-rose-400/40 flex items-center justify-center text-rose-300">
+            <CodeBracketIcon className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="text-[10px] font-mono text-rose-400 uppercase font-bold">Custom Web Platforms</div>
+            <div className="text-xs font-bold text-white">Modern Sub-Second Architectures</div>
+          </div>
+        </div>
+      </div> */}
+      {/* 
+      <div className="hidden xl:block absolute bottom-24 right-10 z-10 animate-float-slow pointer-events-none">
+        <div className="p-3.5 rounded-2xl bg-[#090C16]/90 border border-emerald-500/30 backdrop-blur-xl shadow-2xl flex items-center space-x-3 text-left">
+          <div className="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300">
+            <BoltIcon className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="text-[10px] font-mono text-emerald-400 uppercase font-bold">Guaranteed Reliability</div>
+            <div className="text-xs font-bold text-white">100% Source Code Ownership</div>
+          </div>
+        </div>
+      </div> */}
+
+      {/* Main Hero Header */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+
+        {/* Status Pill */}
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0E1222]/90 border border-rose-500/30 text-xs font-semibold shadow-2xl mb-6 backdrop-blur-xl">
+          <span className="flex h-2 w-2 relative">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="brand-gradient-text font-bold">Digital Engineering & Growth Partner</span>
+          <span className="text-slate-600 hidden md:inline">•</span>
+          <span className="text-slate-300 hidden md:inline font-mono text-[11px]">Senior Architects & 100% IP Ownership</span>
+        </div>
+
+        {/* Headline */}
+        <h1 className="font-heading text-3xl sm:text-5xl md:text-5xl lg:text-[54px] xl:text-6xl font-extrabold text-white leading-[1.12] tracking-tight max-w-5xl mx-auto drop-shadow-lg">
+          We Build Custom Software, <br className="hidden sm:inline" />
+          <span className="brand-gradient-text">Accelerate Growth & Automate with AI.</span>
+        </h1>
+
+        {/* Subheading */}
+        <p className="text-slate-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed max-w-3xl mx-auto mt-4 sm:mt-5 drop-shadow">
+          We partner with founders and enterprise leaders to engineer high-performance web applications, deploy autonomous AI systems, and build scalable growth engines that convert.
+        </p>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 max-w-xl mx-auto w-full">
+          <button
+            type="button"
+            onClick={onOpenBookingModal}
+            className="w-full sm:w-auto group inline-flex items-center justify-center space-x-2 px-7 py-3.5 rounded-xl brand-gradient-bg text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-rose-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer min-h-[48px] whitespace-nowrap"
+          >
+            <span>Start Your Project</span>
+            <ArrowRightIcon className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform flex-shrink-0" />
+          </button>
+
+          <button
+            type="button"
+            onClick={onOpenAuditModal}
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-[#0E1322]/90 border border-amber-400/40 hover:border-amber-300 text-amber-200 font-bold text-xs tracking-wider uppercase transition-all hover:bg-amber-400/10 cursor-pointer min-h-[48px] backdrop-blur-md whitespace-nowrap"
+          >
+            <DocumentMagnifyingGlassIcon className="w-4 h-4 text-amber-400 flex-shrink-0" />
+            <span>Free Technical Audit</span>
+          </button>
+        </div>
+
+        {/* Live Interactive Solution Lab */}
+        <div className="mt-10 max-w-4xl mx-auto rounded-3xl bg-[#080B14]/95 border border-rose-500/30 shadow-2xl overflow-hidden text-left backdrop-blur-2xl">
+
+          {/* Console Header Bar */}
+          <div className="px-4 py-3 bg-[#0C101E] border-b border-slate-800 flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center space-x-2">
+              <div className="flex space-x-1.5">
+                <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block"></span>
+                <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+              </div>
+              <span className="text-[11px] font-mono font-bold text-slate-300 pl-2">
+                Ink Urban Solution Lab • Explore Capabilities
+              </span>
             </div>
 
-            {/* Tab Switcher */}
-            <div className="grid grid-cols-3 w-full sm:w-auto p-1 sm:p-1.5 rounded-xl bg-[#121626] border border-slate-800 gap-1" role="tablist" aria-label="Performance benchmarks tabs">
+            {/* Interactive Console Tabs */}
+            <div className="flex items-center p-1 rounded-xl bg-[#060810] border border-slate-800 gap-1 text-[11px] font-bold">
               <button
                 type="button"
-                role="tab"
-                aria-selected={activeTab === 'speed'}
-                onClick={() => setActiveTab('speed')}
-                className={`px-2.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${activeTab === 'speed'
-                  ? 'brand-gradient-bg text-white shadow-md'
-                  : 'text-slate-400 hover:text-white'
+                onClick={() => setActiveTab('rag')}
+                className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer flex items-center space-x-1.5 ${activeTab === 'rag' ? 'bg-cyan-500/20 border border-cyan-400/50 text-cyan-200 shadow-md' : 'text-slate-400 hover:text-white'
                   }`}
               >
-                PageSpeed
+                <CpuChipIcon className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Enterprise AI & RAG</span>
               </button>
 
               <button
                 type="button"
-                role="tab"
-                aria-selected={activeTab === 'seo'}
-                onClick={() => setActiveTab('seo')}
-                className={`px-2.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${activeTab === 'seo'
-                  ? 'brand-gradient-bg text-white shadow-md'
-                  : 'text-slate-400 hover:text-white'
+                onClick={() => setActiveTab('webdev')}
+                className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer flex items-center space-x-1.5 ${activeTab === 'webdev' ? 'brand-gradient-bg text-white shadow-md' : 'text-slate-400 hover:text-white'
                   }`}
               >
-                Map Pack
+                <ServerStackIcon className="w-3.5 h-3.5" />
+                <span>Web & Cloud Platforms</span>
               </button>
 
               <button
                 type="button"
-                role="tab"
-                aria-selected={activeTab === 'cro'}
-                onClick={() => setActiveTab('cro')}
-                className={`px-2.5 sm:px-4 py-2 rounded-lg text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all text-center cursor-pointer ${activeTab === 'cro'
-                  ? 'brand-gradient-bg text-white shadow-md'
-                  : 'text-slate-400 hover:text-white'
+                onClick={() => setActiveTab('seogrowth')}
+                className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer flex items-center space-x-1.5 ${activeTab === 'seogrowth' ? 'bg-amber-500/20 border border-amber-400/50 text-amber-200 shadow-md' : 'text-slate-400 hover:text-white'
                   }`}
               >
-                Lead CRO
+                <ArrowTrendingUpIcon className="w-3.5 h-3.5 text-amber-400" />
+                <span>Growth & SEO</span>
               </button>
             </div>
           </div>
 
-          {/* Active Tab Content */}
-          <div className="pt-6">
-            {activeTab === 'speed' && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                    Lighthouse Score
+          {/* Interactive Console Screen */}
+          <div className="p-4 sm:p-6 bg-[#060810]">
+
+            {/* VIEW 1: ENTERPRISE AI & RAG ASSISTANTS */}
+            {activeTab === 'rag' && (
+              <div className="space-y-4 animate-fadeIn">
+                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-cyan-500/30 group">
+                  <img
+                    src="/images/rag_chatbot_architecture.jpg"
+                    alt="Enterprise RAG AI Chatbot Architecture and Intelligent Automation"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-transparent to-black/40"></div>
+
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <div className="px-2.5 py-1 rounded-lg bg-[#060810]/85 border border-cyan-500/30 backdrop-blur-md text-[10px] font-mono text-cyan-300 flex items-center space-x-1.5">
+                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                      <span>Custom Enterprise Knowledge Assistant</span>
+                    </div>
+                    <div className="px-2.5 py-1 rounded-lg bg-[#060810]/85 border border-emerald-500/30 backdrop-blur-md text-[10px] font-mono text-emerald-300 font-bold">
+                      Zero Hallucinations Guarantee
+                    </div>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    99 / 100
+
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <span className="text-xs font-bold text-white drop-shadow-md">
+                      Trained on your private documents with strict role-based access control
+                    </span>
+                    <span className="text-[10px] font-mono text-cyan-300 font-bold bg-cyan-500/20 px-2 py-0.5 rounded border border-cyan-500/30">
+                      Sub-250ms Response
+                    </span>
                   </div>
-                  <p className="text-xs text-slate-300">
-                    Tested across 4G mobile connections worldwide.
-                  </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                    Load Duration
-                  </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    0.42s
-                  </div>
-                  <p className="text-xs text-slate-300">
-                    Instant rendering retains 100% of search visitors.
-                  </p>
+                {/* 6-Stage RAG Pipeline */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-center">
+                  {ragStages.map((stage, idx) => (
+                    <div
+                      key={idx}
+                      className={`p-2.5 rounded-xl border transition-all ${activeRagStep === idx
+                        ? 'bg-[#101A2E] border-cyan-400 shadow-lg shadow-cyan-500/20 scale-102'
+                        : 'bg-[#0A0D1A] border-slate-800'
+                        }`}
+                    >
+                      <div className="text-[9px] font-mono text-cyan-400 uppercase font-bold">Stage {stage.step}</div>
+                      <div className="text-xs font-bold text-white mt-0.5">{stage.name}</div>
+                      <div className="text-[9px] text-slate-400 font-mono mt-0.5 leading-tight">{stage.desc}</div>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                    Layout Shift (CLS)
+                <div className="p-3 rounded-xl bg-[#090C16] border border-slate-800 font-mono text-xs text-slate-300 flex items-center justify-between">
+                  <div className="flex items-center space-x-2 truncate">
+                    <span className="text-cyan-400 font-bold">&gt;</span>
+                    <span className="text-slate-400">Live AI Pipeline:</span>
+                    <span className="text-cyan-300 truncate">Document parsed &rarr; Vector embeddings generated &rarr; Real-time verified response delivered</span>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    0.00
-                  </div>
-                  <p className="text-xs text-slate-300">
-                    Zero visual jumps or unstable mobile layout shifts.
-                  </p>
+                  <span className="text-[10px] text-emerald-400 font-bold pl-2 flex-shrink-0">85% Ops Saved</span>
                 </div>
               </div>
             )}
 
-            {activeTab === 'seo' && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                    Map Pack Rank
+            {/* VIEW 2: CUSTOM WEB & CLOUD PLATFORMS */}
+            {activeTab === 'webdev' && (
+              <div className="space-y-4 animate-fadeIn">
+                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-rose-500/20 group">
+                  <img
+                    src="/images/hero_ai_cloud.jpg"
+                    alt="Ink Urban Custom Cloud Architecture and Microservices"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-transparent to-black/40"></div>
+
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <div className="px-2.5 py-1 rounded-lg bg-[#090C16]/80 border border-rose-500/30 backdrop-blur-md text-[10px] font-mono text-rose-300 flex items-center space-x-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>Next.js 15 & Spring Boot Microservices</span>
+                    </div>
+                    <div className="px-2.5 py-1 rounded-lg bg-[#090C16]/80 border border-amber-500/30 backdrop-blur-md text-[10px] font-mono text-amber-300">
+                      {simulatedPing}ms Global Edge Ping
+                    </div>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    Top 3
+
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <span className="text-xs font-bold text-white drop-shadow-md">
+                      Sub-second response times, zero template bloat, and enterprise-grade reliability
+                    </span>
+                    <span className="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-500/20 px-2 py-0.5 rounded border border-emerald-500/30">
+                      100/100 Core Web Vitals
+                    </span>
                   </div>
-                  <p className="text-xs text-slate-300">
-                    Dominates local 3-pack for high-value search queries.
-                  </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                    Entity Schema
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
+                  <div className="p-2.5 rounded-xl bg-[#0D1224] border border-slate-800 space-y-0.5">
+                    <span className="text-[9px] font-mono text-slate-400 uppercase">Modern Frontend</span>
+                    <div className="text-xs font-bold text-white">Next.js & React 19</div>
+                    <div className="text-[10px] text-emerald-400 font-mono">0.2s Page Load</div>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    JSON-LD
+                  <div className="p-2.5 rounded-xl bg-[#0D1224] border border-rose-500/30 space-y-0.5">
+                    <span className="text-[9px] font-mono text-rose-300 uppercase">Global Edge CDN</span>
+                    <div className="text-xs font-bold text-white">Cloudflare Anycast</div>
+                    <div className="text-[10px] text-amber-400 font-mono">Worldwide Caching</div>
                   </div>
-                  <p className="text-xs text-slate-300">
-                    Full Google Knowledge Graph & local business markup.
-                  </p>
+                  <div className="p-2.5 rounded-xl bg-[#0D1224] border border-slate-800 space-y-0.5">
+                    <span className="text-[9px] font-mono text-slate-400 uppercase">Backend Microservices</span>
+                    <div className="text-xs font-bold text-white">Spring Boot & Python</div>
+                    <div className="text-[10px] text-emerald-400 font-mono">Sub-300ms Endpoints</div>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-[#0D1224] border border-slate-800 space-y-0.5">
+                    <span className="text-[9px] font-mono text-slate-400 uppercase">Enterprise Data Tier</span>
+                    <div className="text-xs font-bold text-white">PostgreSQL & Redis</div>
+                    <div className="text-[10px] text-emerald-400 font-mono">99.99% Uptime SLA</div>
+                  </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                    Search Traffic
+                <div className="p-3 rounded-xl bg-[#0D1120] border border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircleIcon className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span className="text-slate-200 font-medium">Full intellectual property ownership: <strong>100% repository transfer on completion</strong></span>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    +280%
-                  </div>
-                  <p className="text-xs text-slate-300">
-                    Average organic inbound traffic increase in 120 days.
-                  </p>
+                  <span className="text-[11px] font-mono text-rose-300 bg-rose-500/10 px-2.5 py-0.5 rounded border border-rose-500/30">
+                    Zero Vendor Lock-In
+                  </span>
                 </div>
               </div>
             )}
 
-            {activeTab === 'cro' && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                    Inquiry Rate
+            {/* VIEW 3: GROWTH MARKETING & SEO */}
+            {activeTab === 'seogrowth' && (
+              <div className="space-y-4 animate-fadeIn">
+                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden border border-amber-500/20 group">
+                  <img
+                    src="/images/cro_growth_engine.jpg"
+                    alt="Ink Urban Growth Marketing and Conversion Funnel Engineering"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#060810] via-transparent to-black/40"></div>
+
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <div className="px-2.5 py-1 rounded-lg bg-[#090C16]/80 border border-amber-500/30 backdrop-blur-md text-[10px] font-mono text-amber-300 flex items-center space-x-1.5">
+                      <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                      <span>High-Converting Digital Acquisition Funnels</span>
+                    </div>
+                    <div className="px-2.5 py-1 rounded-lg bg-[#090C16]/80 border border-emerald-500/30 backdrop-blur-md text-[10px] font-mono text-emerald-300 font-bold">
+                      +340% Conversion Uplift
+                    </div>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    5.4%
+
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                    <span className="text-xs font-bold text-white drop-shadow-md">
+                      Programmatic SEO architectures and high-converting UX engineered for qualified pipeline
+                    </span>
+                    <span className="text-[10px] font-mono text-amber-300 font-bold bg-amber-500/20 px-2 py-0.5 rounded border border-amber-500/30">
+                      4.2x ROI
+                    </span>
                   </div>
-                  <p className="text-xs text-slate-300">
-                    Up from 1.2% typical industry website conversion.
-                  </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                    Intake Friction
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                  <div className="p-3 rounded-xl bg-[#0D1224] border border-amber-500/30 text-center space-y-0.5">
+                    <div className="text-2xl font-extrabold font-heading text-white brand-gradient-text">+340%</div>
+                    <div className="text-xs font-bold text-white">Conversion Rate Lift</div>
+                    <div className="text-[10px] text-slate-400">Streamlined intake drawers</div>
                   </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    2-Click
+                  <div className="p-3 rounded-xl bg-[#0D1224] border border-slate-800 text-center space-y-0.5">
+                    <div className="text-2xl font-extrabold font-heading text-white">#1 Rank</div>
+                    <div className="text-xs font-bold text-white">Organic Search Authority</div>
+                    <div className="text-[10px] text-slate-400">Structured entity schemas</div>
                   </div>
-                  <p className="text-xs text-slate-300">
-                    Micro-drawers make strategy booking instantaneous.
-                  </p>
+                  <div className="p-3 rounded-xl bg-[#0D1224] border border-slate-800 text-center space-y-0.5">
+                    <div className="text-2xl font-extrabold font-heading text-white">4.2x ROI</div>
+                    <div className="text-xs font-bold text-white">Acquisition Efficiency</div>
+                    <div className="text-[10px] text-slate-400">Server-side attribution</div>
+                  </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-[#101422] border border-slate-800 space-y-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-rose-400">
-                    Client Value
-                  </div>
-                  <div className="text-4xl font-extrabold text-white font-heading">
-                    3.5x
-                  </div>
-                  <p className="text-xs text-slate-300">
-                    Higher quality inquiries willing to pay premium fees.
-                  </p>
+                <div className="p-3 rounded-xl bg-[#0D1120] border border-slate-800 flex items-center justify-between text-xs">
+                  <span className="text-slate-300">Ready to review your digital product, codebase, or conversion funnel?</span>
+                  <button
+                    type="button"
+                    onClick={onOpenAuditModal}
+                    className="text-amber-300 hover:text-amber-200 font-bold underline cursor-pointer"
+                  >
+                    Request Free Technical Teardown &rarr;
+                  </button>
                 </div>
               </div>
             )}
+
           </div>
+        </div>
 
+        {/* Tech Badges Row */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto">
+          {techBadges.map((tech, idx) => (
+            <span
+              key={idx}
+              className="px-3 py-1 rounded-lg bg-[#0E1220]/80 border border-slate-800 text-xs font-medium text-slate-400 hover:text-white transition-colors backdrop-blur-md"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
 
       </div>
     </section>
   );
 };
+
