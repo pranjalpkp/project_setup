@@ -6,12 +6,8 @@ import {
   ArrowTrendingUpIcon, 
   CpuChipIcon, 
   ArrowRightIcon,
-  ServerStackIcon,
   SparklesIcon,
-  CheckCircleIcon,
-  ShieldCheckIcon,
-  CircleStackIcon,
-  CommandLineIcon
+  CheckCircleIcon
 } from '@heroicons/react/24/outline';
 
 interface ServicesProps {

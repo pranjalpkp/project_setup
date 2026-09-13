@@ -2,16 +2,19 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/agency/Navbar';
 import { Footer } from '@/components/agency/Footer';
 import { ShieldCheckIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 
 export function PrivacyView() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen bg-[#07080C] text-slate-100 relative overflow-hidden font-sans selection:bg-rose-500/20 selection:text-white">
       <Navbar 
-        onOpenBookingModal={() => window.location.href = '/#booking'}
-        onOpenAuditModal={() => window.location.href = '/#audit'}
+        onOpenBookingModal={() => router.push('/#booking')}
+        onOpenAuditModal={() => router.push('/#audit')}
       />
 
       <div className="pt-36 pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
@@ -103,8 +106,8 @@ export function PrivacyView() {
       </div>
 
       <Footer 
-        onOpenBookingModal={() => window.location.href = '/#booking'}
-        onOpenAuditModal={() => window.location.href = '/#audit'}
+        onOpenBookingModal={() => router.push('/#booking')}
+        onOpenAuditModal={() => router.push('/#audit')}
       />
     </main>
   );

@@ -3,19 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import {
   ArrowRightIcon,
-  BoltIcon,
-  SparklesIcon,
   CpuChipIcon,
-  CommandLineIcon,
   ArrowTrendingUpIcon,
   DocumentMagnifyingGlassIcon,
   CheckCircleIcon,
-  ServerStackIcon,
-  ShieldCheckIcon,
-  CircleStackIcon,
-  ChatBubbleLeftRightIcon,
-  MagnifyingGlassIcon,
-  CodeBracketIcon
+  ServerStackIcon
 } from '@heroicons/react/24/outline';
 
 interface HeroProps {

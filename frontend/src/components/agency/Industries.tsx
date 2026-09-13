@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { 
-  SparklesIcon, 
   BuildingOffice2Icon, 
   ShoppingBagIcon,
   CheckBadgeIcon,
@@ -99,7 +98,7 @@ export const Industries: React.FC<IndustriesProps> = ({ onOpenBookingModal }) =>
             Engineered For Your <span className="brand-gradient-text">Specific Business Model</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base">
-            Custom software architectures, growth funnels, and automated AI systems built around your industry's workflows, compliance needs, and customer psychology.
+            Custom software architectures, growth funnels, and automated AI systems built around your industry&apos;s workflows, compliance needs, and customer psychology.
           </p>
         </div>
 

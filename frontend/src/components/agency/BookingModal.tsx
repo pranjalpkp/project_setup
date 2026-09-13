@@ -6,8 +6,7 @@ import {
   CalendarIcon, 
   ClockIcon, 
   GlobeAltIcon, 
-  CheckCircleIcon,
-  SparklesIcon
+  CheckCircleIcon
 } from '@heroicons/react/24/outline';
 import toast from 'react-hot-toast';
 

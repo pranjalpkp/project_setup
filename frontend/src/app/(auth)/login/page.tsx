@@ -62,14 +62,23 @@ export default function LoginPage() {
               autoComplete="email"
               required
             />
-            <Input
-              {...register('password')}
-              type={showPassword ? 'text' : 'password'}
-              label="Password"
-              error={errors.password?.message}
-              autoComplete="current-password"
-              required
-            />
+            <div className="relative">
+              <Input
+                {...register('password')}
+                type={showPassword ? 'text' : 'password'}
+                label="Password"
+                error={errors.password?.message}
+                autoComplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-8 text-xs text-slate-400 hover:text-slate-600 cursor-pointer"
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
           </div>
 
           <div className="flex items-center justify-between">

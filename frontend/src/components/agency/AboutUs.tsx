@@ -5,7 +5,6 @@ import {
   ShieldCheckIcon,
   CheckCircleIcon,
   EnvelopeIcon,
-  SparklesIcon,
   CodeBracketIcon
 } from '@heroicons/react/24/outline';
 

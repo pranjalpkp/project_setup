@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { CalendarIcon, Bars3Icon, XMarkIcon, ChevronRightIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, Bars3Icon, XMarkIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 
 interface NavbarProps {
@@ -93,45 +93,45 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
 
           {/* Desktop Navigation Links */}
           <nav aria-label="Main Desktop Navigation" className="hidden lg:flex items-center space-x-7 text-xs tracking-wider uppercase font-bold text-slate-300">
-            <a 
+            <Link 
               href="/#services" 
               onClick={(e) => handleNavClick(e, '/#services')}
               className="hover:text-rose-400 transition-colors py-2"
             >
               Services
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/#industries" 
               onClick={(e) => handleNavClick(e, '/#industries')}
               className="hover:text-rose-400 transition-colors py-2"
             >
               Industries
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/#process" 
               onClick={(e) => handleNavClick(e, '/#process')}
               className="hover:text-rose-400 transition-colors py-2"
             >
               Process
-            </a>
+            </Link>
             <Link href="/case-studies" className="hover:text-rose-400 transition-colors py-2">
               Case Studies
             </Link>
-            <a 
+            <Link 
               href="/#audit-offer" 
               onClick={(e) => handleNavClick(e, '/#audit-offer')}
               className="hover:text-amber-300 transition-colors text-amber-300 font-extrabold flex items-center gap-1.5 py-2"
             >
               <span>Free Technical Audit</span>
               <span className="text-[9px] px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/40 font-bold">Free</span>
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/#faq" 
               onClick={(e) => handleNavClick(e, '/#faq')}
               className="hover:text-rose-400 transition-colors py-2"
             >
               FAQ
-            </a>
+            </Link>
           </nav>
 
           {/* Action CTAs */}
@@ -204,32 +204,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
             className="absolute top-full left-0 right-0 w-full bg-[#080A12] border-b border-slate-800/90 px-4 pt-4 pb-6 space-y-4 shadow-2xl z-50 text-white max-h-[calc(100vh-80px)] overflow-y-auto animate-slideDown"
           >
             <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1.5 text-xs tracking-wider uppercase font-bold text-slate-200">
-              <a
+              <Link
                 href="/#services"
                 onClick={(e) => handleNavClick(e, '/#services')}
                 className="hover:text-rose-400 py-3 px-3.5 rounded-xl bg-[#0F1322]/90 border border-slate-800/80 hover:border-rose-500/40 transition-all flex items-center justify-between min-h-[48px]"
               >
                 <span>Services & Capabilities</span>
                 <ChevronRightIcon className="w-4 h-4 text-slate-500" aria-hidden="true" />
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/#industries"
                 onClick={(e) => handleNavClick(e, '/#industries')}
                 className="hover:text-rose-400 py-3 px-3.5 rounded-xl bg-[#0F1322]/90 border border-slate-800/80 hover:border-rose-500/40 transition-all flex items-center justify-between min-h-[48px]"
               >
                 <span>Target Industries</span>
                 <ChevronRightIcon className="w-4 h-4 text-slate-500" aria-hidden="true" />
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/#process"
                 onClick={(e) => handleNavClick(e, '/#process')}
                 className="hover:text-rose-400 py-3 px-3.5 rounded-xl bg-[#0F1322]/90 border border-slate-800/80 hover:border-rose-500/40 transition-all flex items-center justify-between min-h-[48px]"
               >
                 <span>Delivery Process</span>
                 <ChevronRightIcon className="w-4 h-4 text-slate-500" aria-hidden="true" />
-              </a>
+              </Link>
 
               <Link
                 href="/case-studies"
@@ -240,7 +240,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
                 <ChevronRightIcon className="w-4 h-4 text-slate-500" aria-hidden="true" />
               </Link>
 
-              <a
+              <Link
                 href="/#audit-offer"
                 onClick={(e) => handleNavClick(e, '/#audit-offer')}
                 className="hover:text-rose-400 py-3 px-3.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-rose-500/10 border border-amber-400/30 text-amber-300 font-extrabold flex items-center justify-between min-h-[48px]"
@@ -250,16 +250,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBookingModal, onOpenAuditM
                   <span className="text-[10px] px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/40 uppercase font-bold">Free</span>
                 </div>
                 <ChevronRightIcon className="w-4 h-4 text-amber-400" aria-hidden="true" />
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/#faq"
                 onClick={(e) => handleNavClick(e, '/#faq')}
                 className="hover:text-rose-400 py-3 px-3.5 rounded-xl bg-[#0F1322]/90 border border-slate-800/80 hover:border-rose-500/40 transition-all flex items-center justify-between min-h-[48px]"
               >
                 <span>Frequently Asked Questions</span>
                 <ChevronRightIcon className="w-4 h-4 text-slate-500" aria-hidden="true" />
-              </a>
+              </Link>
             </nav>
 
             <div className="pt-3 border-t border-slate-800 flex flex-col space-y-2.5">

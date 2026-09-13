@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { 
   MapPinIcon, 
   ArrowRightIcon, 
-  SparklesIcon,
-  ChartBarIcon
+  SparklesIcon
 } from '@heroicons/react/24/outline';
 import { caseStudiesData } from '@/data/caseStudiesData';
 
